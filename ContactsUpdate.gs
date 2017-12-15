@@ -1,8 +1,8 @@
 
 
 function Initialize() {
-  var NAME  = "YOUR_FULL_NAME";           // It will show up in the signature of your outgoing emails
-  var GROUP = "GOOGLE_CONTACT_GROUP";     // Enter the exact name of your Google Contacts group
+  var NAME  = "Jon Griffith";           // It will show up in the signature of your outgoing emails
+  var GROUP = "superhero";     // Enter the exact name of your Google Contacts group
 
 /*
 
@@ -11,53 +11,7 @@ function Initialize() {
   Author: Amit Agarwal (ctrlq.org)
   Last Updated: October 15, 2014
 
-
-
-  H E L P
-  - - - -
-
-  For help, send me a tweet @labnol or an email at amit@labnol.org
-
-
-
-
-  T H E   G E E K Y   S T U F F
-  - - -   - - - - -   - - - - -
-
-  You can ignore everything that's below this line.
-
-
-
-
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   try {
 
@@ -100,6 +54,7 @@ function doGet(e) {
   var contact = labnolGetBasicContact(e.parameter.id);
   html.email = contact.EMAIL;
   html.name = contact.NAME;
+  html.workemail = contact.WORK_EMAIL;
   return html.evaluate().setSandboxMode(HtmlService.SandboxMode.NATIVE);
 }
 
@@ -109,6 +64,12 @@ function labnolGetBasicContact(id) {
 
   contact.NAME = "";
   contact.EMAIL = "";
+  
+/* Mod by Jon Griffith */
+  
+  contact.WORK_EMAIL = "";
+  
+/* END Mod */
 
   id = "http://www.google.com/m8/feeds/contacts/" + encodeURIComponent(Session.getEffectiveUser().getEmail()) + "/base/" + id;
 
@@ -122,6 +83,12 @@ function labnolGetBasicContact(id) {
     if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
       contact.EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
 
+    /* Mod by Jon Griffith */
+    
+    if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
+      contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
+    
+    /* END MOD */
   }
 
   return contact;
@@ -148,6 +115,13 @@ function labnolGetContact(id) {
 
       if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
         contact.HOME_EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
+      
+      /* Mod by Jon Griffith */
+      
+      if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
+        contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
+      
+      /* END MOD */
 
       if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length) {
         contact.HOME_ADDRESS = c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].getAddress();
@@ -200,6 +174,16 @@ function labnolUpdateContact(contact) {
 
       if (contact.SKYPE.length)
         c.addIM(ContactsApp.Field.SKYPE, contact.SKYPE);
+      
+      /* MOD by Jon Griffith */
+      
+      if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
+        c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].deleteEmailField();
+      
+      if(contact.WORK_EMAIL.length)
+        c.addEmail(ContactsApp.Field.WORK_EMAIL, contact.WORK_EMAIL);
+      
+      /* END MOD */
 
       if (c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length)
         c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].deleteAddressField();

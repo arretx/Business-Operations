@@ -3,7 +3,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <style>
     .contacts {
-    width: 400px;
+    width: 80%;
     margin: 0 auto;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -29,7 +29,12 @@
 
     <p>
       <label class="control-label" for="inputEmail">Email Address</label>
-      <input type="text" id="inputHOME_EMAIL" class="input-large" placeholder="e.g. amit@labnol.org">
+      <input type="text" id="inputHOME_EMAIL" class="input-large" value="<?= email ?>">
+    </p>
+
+    <p>
+      <label class="control-label" for="inputWorkEmail">Work Email Address</label>
+      <input type="text" id="inputWORK_EMAIL" class="input-large" value="<?= workemail ?>">
     </p>
 
     <p>
@@ -87,6 +92,7 @@
     contact.FULL_NAME    = $("input#inputFULL_NAME").val();
     contact.HOME_EMAIL   = $("input#inputHOME_EMAIL").val();
     contact.HOME_ADDRESS = $("input#inputHOME_ADDRESS").val();
+    contact.WORK_EMAIL   = $("input#inputWORK_EMAIL").val();
     contact.MOBILE_PHONE = $("input#inputMOBILE_PHONE").val();
     contact.SKYPE        = $("input#inputSKYPE").val();
     contact.TWITTER      = $("input#inputTWITTER").val();
