@@ -1,6 +1,6 @@
 # What this is...
 
-The two files here were written by Amit Agarwal sometime in 2014.  Together, when deployed, this script sends an e-mail to everyone in your Google Contacts with a specific group designation (which you define) with a message and a link encouraging them to update their contact information through a form.
+The two files here were written by Amit Agarwal sometime in 2014.  (https://ctrlq.org/) Together, when deployed, this script sends an e-mail to everyone in your Google Contacts with a specific group designation (which you define) with a message and a link encouraging them to update their contact information through a form.
 
 It works well, but it's missing a few features that would improve it.
 
