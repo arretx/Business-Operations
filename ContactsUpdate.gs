@@ -19,23 +19,29 @@ function Initialize() {
 
     if (googleGROUP) {
 
-      var emailSUBJECT  = "Your contact information";
+      var emailSUBJECT  = "Just checking...";
       var myContacts = googleGROUP.getContacts();
 
       for (i=0; i<myContacts.length; i++) {
 
         var email = myContacts[i].getPrimaryEmail();
 
+        /* Modified by Jon Griffith */
+
+        var givenName = myContacts[i].getGivenName();
+
+        /* END MOD */
+
         if (email && email.length) {
 
           var ID = myContacts[i].getId();
           ID = ID.substr(ID.lastIndexOf("/") + 1);
 
-          var emailBody = "Hi,<br /><br />" +
-            "Would you please take a moment and update your contact information in my address book. <br /><br />" +
+          var emailBody = "Hi" + givenName ",<br /><br />" +
+            "Everything changes so fast!  I have your information in My Contacts, but I want to make sure it's accurate in case you've moved, or something has changed and I haven't updated it yet.  So, if you could help me, that would be awesome.  It should only take a second.<br /><br />" +
               "Please <a href='" + ScriptApp.getService().getUrl() + "?id=" +
-                ID + "'>click here</a> and fill-in the required details." +
-                  "Your information will be directly added to my Google Contacts." +
+                ID + "'>click here</a> to see the information I currently have on record and if something's not right, please help me update it if you would." +
+                  "When you click submit, the information will update my iPhone in real-time!" +
                     "<br /><br />Thanks,<br />" + NAME;
 
           GmailApp.sendEmail(email, emailSUBJECT, emailBody,
@@ -64,11 +70,11 @@ function labnolGetBasicContact(id) {
 
   contact.NAME = "";
   contact.EMAIL = "";
-  
+
 /* Mod by Jon Griffith */
-  
+
   contact.WORK_EMAIL = "";
-  
+
 /* END Mod */
 
   id = "http://www.google.com/m8/feeds/contacts/" + encodeURIComponent(Session.getEffectiveUser().getEmail()) + "/base/" + id;
@@ -84,10 +90,10 @@ function labnolGetBasicContact(id) {
       contact.EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
 
     /* Mod by Jon Griffith */
-    
+
     if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
       contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
-    
+
     /* END MOD */
   }
 
@@ -115,12 +121,12 @@ function labnolGetContact(id) {
 
       if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
         contact.HOME_EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
-      
+
       /* Mod by Jon Griffith */
-      
+
       if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
         contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
-      
+
       /* END MOD */
 
       if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length) {
@@ -174,15 +180,15 @@ function labnolUpdateContact(contact) {
 
       if (contact.SKYPE.length)
         c.addIM(ContactsApp.Field.SKYPE, contact.SKYPE);
-      
+
       /* MOD by Jon Griffith */
-      
+
       if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
         c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].deleteEmailField();
-      
+
       if(contact.WORK_EMAIL.length)
         c.addEmail(ContactsApp.Field.WORK_EMAIL, contact.WORK_EMAIL);
-      
+
       /* END MOD */
 
       if (c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length)
