@@ -37,7 +37,7 @@ function Initialize() {
           var ID = myContacts[i].getId();
           ID = ID.substr(ID.lastIndexOf("/") + 1);
 
-          var emailBody = "Hi" + givenName ",<br /><br />" +
+          var emailBody = "Hi,<br /><br />" +
             "Everything changes so fast!  I have your information in My Contacts, but I want to make sure it's accurate in case you've moved, or something has changed and I haven't updated it yet.  So, if you could help me, that would be awesome.  It should only take a second.<br /><br />" +
               "Please <a href='" + ScriptApp.getService().getUrl() + "?id=" +
                 ID + "'>click here</a> to see the information I currently have on record and if something's not right, please help me update it if you would." +
