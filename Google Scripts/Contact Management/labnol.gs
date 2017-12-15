@@ -1,26 +1,14 @@
 
 
 function Initialize() {
-
-
-
   var NAME  = "YOUR_FULL_NAME";           // It will show up in the signature of your outgoing emails
   var GROUP = "GOOGLE_CONTACT_GROUP";     // Enter the exact name of your Google Contacts group
 
-
-
-
-
 /*
 
-
-
   Tutorial: http://www.labnol.org/?p=27306
-
   Video: http://www.youtube.com/watch?v=SMxvZgK4BMg
-
   Author: Amit Agarwal (ctrlq.org)
-
   Last Updated: October 15, 2014
 
 
