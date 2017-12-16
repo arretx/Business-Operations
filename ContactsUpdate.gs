@@ -1,28 +1,29 @@
-
-
-function Initialize() {
-  var NAME  = "Jon Griffith";           // It will show up in the signature of your outgoing emails
-  var GROUP = "superhero";     // Enter the exact name of your Google Contacts group
-
 /*
 
   Tutorial: http://www.labnol.org/?p=27306
   Video: http://www.youtube.com/watch?v=SMxvZgK4BMg
-  Author: Amit Agarwal (ctrlq.org)
+  Original Author: Amit Agarwal (ctrlq.org)
   Last Updated: October 15, 2014
+  
+  Modifications by Jon Griffith
+  Modified on December 15, 2017
 
 */
 
+function Initialize() {
+  var NAME  = "Jon Griffith";           // It will show up in the signature of your outgoing emails
+  var GROUP = "superhero";     // Enter the exact name of your Google Contacts group / label
+  
   try {
 
-    var googleGROUP = ContactsApp.getContactGroup(GROUP);
+    var googleGROUP = ContactsApp.getContactGroup(GROUP); // Defines a variable containing the specified GROUP (Line 3)
 
-    if (googleGROUP) {
+    if (googleGROUP) { //If there's a result for the variable googleGroup, continue...
 
-      var emailSUBJECT  = "Just checking...";
-      var myContacts = googleGROUP.getContacts();
+      var emailSUBJECT  = "Just checking..."; //Define the subject for the e-mail.
+      var myContacts = googleGROUP.getContacts(); //Get all contacts in the group specified.
 
-      for (i=0; i<myContacts.length; i++) {
+      for (i=0; i<myContacts.length; i++) {  //Loop through each contact one at a time and generate and send an e-mail.
 
         var email = myContacts[i].getPrimaryEmail();
 
@@ -37,11 +38,11 @@ function Initialize() {
           var ID = myContacts[i].getId();
           ID = ID.substr(ID.lastIndexOf("/") + 1);
 
-          var emailBody = "Hi,<br /><br />" +
-            "Everything changes so fast!  I have your information in My Contacts, but I want to make sure it's accurate in case you've moved, or something has changed and I haven't updated it yet.  So, if you could help me, that would be awesome.  It should only take a second.<br /><br />" +
-              "Please <a href='" + ScriptApp.getService().getUrl() + "?id=" +
-                ID + "'>click here</a> to see the information I currently have on record and if something's not right, please help me update it if you would." +
-                  "When you click submit, the information will update my iPhone in real-time!" +
+          var emailBody = "Hi," + /* Modified by Jon Griffith */ givenName /* END MOD */ + ",<br /><br />" +
+            "Everything changes so fast!  I have your information in My Contacts, but I want to make sure it's accurate in case you've moved, or something has changed.  If you could help me, that would be awesome.  It should only take a second.<br /><br />" +
+              "<a href='" + ScriptApp.getService().getUrl() + "?id=" +
+                ID + "'>Click here</a> to see the information I currently have on record.  If something's not right, would you help me by updating it?" +
+                  "When you 'Confirm or Update Details', the information will update my iPhone in real-time!<br /><br />" +
                     "<br /><br />Thanks,<br />" + NAME;
 
           GmailApp.sendEmail(email, emailSUBJECT, emailBody,
@@ -61,6 +62,14 @@ function doGet(e) {
   html.email = contact.EMAIL;
   html.name = contact.NAME;
   html.workemail = contact.WORK_EMAIL;
+  html.homeaddress = contact.HOME_ADDRESS;
+  /*html.workaddress = contact.WORK_ADDRESS;*/
+  html.mobilephone = contact.MOBILE_PHONE;
+  html.homewebsite = contact.HOME_WEBSITE;
+  html.profile = contact.PROFILE;
+  html.skype = contact.SKYPE;
+  html.instagram = contact.INSTAGRAM;
+  html.twitter = contact.TWITTER
   return html.evaluate().setSandboxMode(HtmlService.SandboxMode.NATIVE);
 }
 
@@ -74,6 +83,14 @@ function labnolGetBasicContact(id) {
 /* Mod by Jon Griffith */
 
   contact.WORK_EMAIL = "";
+  contact.HOME_ADDRESS = "";
+  /*contact.WORK_ADDRESS = "";*/
+  contact.MOBILE_PHONE = "";
+  contact.HOME_WEBSITE = "";
+  contact.PROFILE = "";
+  contact.INSTAGRAM = "";
+  contact.TWITTER = "";
+  contact.SKYPE = "";
 
 /* END Mod */
 
@@ -93,6 +110,30 @@ function labnolGetBasicContact(id) {
 
     if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
       contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
+    
+    if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length)
+      contact.HOME_ADDRESS = c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].getAddress();
+    
+    /*if(c.getAddresses(ContactsApp.Field.WORK_ADDRESS).length)
+      contact.WORK_ADDRESS = c.getAddresses(ContactsApp.Field.WORK_ADDRESS)[0].getAddress();*/
+    
+    if(c.getPhones(ContactsApp.Field.MOBILE_PHONE).length)
+      contact.MOBILE_PHONE = c.getPhones(ContactsApp.Field.MOBILE_PHONE)[0].getPhoneNumber();
+    
+    if(c.getUrls(ContactsApp.Field.HOME_WEBSITE).length)
+      contact.HOME_WEBSITE = c.getUrls(ContactsApp.Field.HOME_WEBSITE)[0].getAddress();
+
+    if(c.getUrls(ContactsApp.Field.PROFILE).length)
+      contact.PROFILE = c.getUrls(ContactsApp.Field.PROFILE)[0].getAddress();
+    
+    if(c.getIMs(ContactsApp.Field.SKYPE).length)
+      contact.SKYPE = c.getIMs(ContactsApp.Field.SKYPE)[0].getAddress();
+    
+    if(c.getCustomFields(ContactsApp.Field.INSTAGRAM).length)
+      contact.INSTAGRAM = c.getCustomFields(ContactsApp.Field.INSTAGRAM)[0].getValue();
+    
+    if(c.getCustomFields(ContactsApp.Field.TWITTER).length)
+      contact.TWITTER = c.getCustomFields(ContactsApp.Field.TWITTER)[0].getValue();
 
     /* END MOD */
   }
@@ -116,33 +157,69 @@ function labnolGetContact(id) {
 
       contact.FOUND = 1;
 
+      //FULL NAME
+      
       if (c.getFullName().length)
         contact.FULL_NAME = c.getFullName();
 
+      //HOME EMAIL
+      
       if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
         contact.HOME_EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
 
       /* Mod by Jon Griffith */
 
+      //WORK E-MAIL
+      
       if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
         contact.WORK_EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
 
+      //WORK ADDRESS
+      /*
+      if(c.getAddresses(ContactsApp.Field.WORK_ADDRESS).length) {
+        contact.WORK_ADDRESS = c.getAddresses(ContactsApp.Field.WORK_ADDRESS)[0].getAddress();
+        contact.WORK_ADDRESS = contact.WORK_ADDRESS.replace(/\n/g, ", ");
+      }
+      */
       /* END MOD */
 
+      //HOME ADDRESS
+      
       if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length) {
         contact.HOME_ADDRESS = c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].getAddress();
         contact.HOME_ADDRESS = contact.HOME_ADDRESS.replace(/\n/g, ", ");
       }
 
+      //MOBILE PHONE
+      
       if(c.getPhones(ContactsApp.Field.MOBILE_PHONE).length)
         contact.MOBILE_PHONE = c.getPhones(ContactsApp.Field.MOBILE_PHONE)[0].getPhoneNumber();
 
+      //INSTANT MESSAGE SKYPE
+      
       if(c.getIMs(ContactsApp.Field.SKYPE).length)
         contact.SKYPE = c.getIMs(ContactsApp.Field.SKYPE)[0].getAddress();
 
-      if(c.getUrls(ContactsApp.Field.BLOG).length)
-        contact.BLOG = c.getUrls(ContactsApp.Field.BLOG)[0].getAddress();
+      //WEBSITE - HOME WEBSITE
+      
+      if(c.getUrls(ContactsApp.Field.HOME_WEBSITE).length)
+        contact.HOME_WEBSITE = c.getUrls(ContactsApp.Field.HOME_WEBSITE)[0].getAddress();
+      
+      //WEBSITE - PROFILE
+      
+      if(c.getUrls(ContactsApp.Field.PROFILE).length)
+        contact.PROFILE = c.getUrls(ContactsApp.Field.PROFILE)[0].getAddress();
+      
+      // CUSTOM FIELDS INSTAGRAM & TWITTER
+      
+      if(c.getCustomFields(ContactsApp.Field.INSTAGRAM).length)
+        contact.INSTAGRAM = c.getCustomFields(ContactsApp.Field.INSTAGRAM)[0].getValue();
 
+      if(c.getCustomFields(ContactsApp.Field.TWITTER).length)
+        contact.TWITTER = c.getCustomFields(ContactsApp.Field.TWITTER)[0].getValue();
+      
+      //BIRTHDAY
+      
       if(c.getDates(ContactsApp.Field.BIRTHDAY).length) {
         var months = ["0", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
                       "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
@@ -173,8 +250,16 @@ function labnolUpdateContact(contact) {
 
     if (c) {
 
+      //FULL NAME
+
       c.setFullName(contact.FULL_NAME);
 
+      //CHANGE GROUP
+      Logger.log(contact.FULL_NAME); 
+      c.removeFromGroup('superhero');
+      
+      //SKYPE
+      
       if(c.getIMs(ContactsApp.Field.SKYPE).length)
         c.getIMs(ContactsApp.Field.SKYPE)[0].deleteIMField();
 
@@ -183,32 +268,58 @@ function labnolUpdateContact(contact) {
 
       /* MOD by Jon Griffith */
 
+      //WORK EMAIL
+      
       if(c.getEmails(ContactsApp.Field.WORK_EMAIL).length)
         c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].deleteEmailField();
 
       if(contact.WORK_EMAIL.length)
         c.addEmail(ContactsApp.Field.WORK_EMAIL, contact.WORK_EMAIL);
 
+      //WORK ADDRESS 
+      /*
+      if (c.getAddresses(ContactsApp.Field.WORK_ADDRESS).length)
+        c.getAddresses(ContactsApp.Field.WORK_ADDRESS)[0].deleteAddressField();
+
+      if (contact.WORK_ADDRESS.length)
+        c.addAddress(ContactsApp.Field.WORK_ADDRESS, contact.WORK_ADDRESS);
+      */
       /* END MOD */
 
+      //HOME ADDRESS
+      
       if (c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length)
         c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].deleteAddressField();
 
       if (contact.HOME_ADDRESS.length)
         c.addAddress(ContactsApp.Field.HOME_ADDRESS, contact.HOME_ADDRESS);
 
+      //MOBILE PHONE
+      
       if (c.getPhones(ContactsApp.Field.MOBILE_PHONE).length)
         c.getPhones(ContactsApp.Field.MOBILE_PHONE)[0].deletePhoneField();
 
       if (contact.MOBILE_PHONE.length)
         c.addPhone(ContactsApp.Field.MOBILE_PHONE, contact.MOBILE_PHONE);
 
-      if (c.getUrls(ContactsApp.Field.BLOG).length)
-        c.getUrls(ContactsApp.Field.BLOG)[0].deleteUrlField();
+      //URL HOME WEBSITE
+      
+      if (c.getUrls(ContactsApp.Field.HOME_WEBSITE).length)
+        c.getUrls(ContactsApp.Field.HOME_WEBSITE)[0].deleteUrlField();
 
-      if (contact.BLOG.length)
-        c.addUrl(ContactsApp.Field.BLOG, contact.BLOG);
+      if (contact.HOME_WEBSITE.length)
+        c.addUrl(ContactsApp.Field.HOME_WEBSITE, contact.HOME_WEBSITE);
+      
+      //URL PROFILE
+      
+      if (c.getUrls(ContactsApp.Field.PROFILE).length)
+        c.getUrls(ContactsApp.Field.PROFILE)[0].deleteUrlField();
 
+      if (contact.PROFILE.length)
+        c.addUrl(ContactsApp.Field.PROFILE, contact.PROFILE);
+
+      //CUSTOM FIELD TWITTER
+      
       if(contact.TWITTER.length) {
         var cfields = c.getCustomFields();
         for (var i = 0; i < cfields.length; i++) {
@@ -219,6 +330,20 @@ function labnolUpdateContact(contact) {
         c.addCustomField("Twitter", "http://twitter.com/" + contact.TWITTER);
       }
 
+      //CUSTOM FIELD INSTAGRAM
+      
+      if(contact.INSTAGRAM.length) {
+        var cfields = c.getCustomFields();
+        for (var i = 0; i < cfields.length; i++) {
+          if (cfields[i].getLabel() == 'Instagram') {
+            cfields[i].deleteCustomField();
+          }
+        }
+        c.addCustomField("Instagram","http://instagram.com/", contact.INSTAGRAM);
+      }
+      
+      //BIRTHDAY
+      
       if (contact.BIRTHDAY.length) {
 
         var months =
@@ -237,6 +362,12 @@ function labnolUpdateContact(contact) {
 
       }
 
+      //SEND MAIL TO ME TO LET ME KNOW SOMEONE UPDATED THEIR INFORMATION
+      
+       // SHOULD LOOK SOMETHING LIKE THIS
+       //GmailApp.sendEmail(email, emailSUBJECT, emailBody,
+       //                      {htmlBody:emailBody, name:NAME});
+      
       GmailApp.sendEmail(Session.getEffectiveUser().getEmail(),
                         "Updated: " + contact.FULL_NAME + " (" + contact.HOME_EMAIL + ")",
                         Utilities.jsonStringify(contact));

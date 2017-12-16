@@ -38,36 +38,45 @@
     </p>
 
     <p>
-      <label class="control-label" for="inputAddressWork">Mailing Address</label>
-      <input type="text" id="inputHOME_ADDRESS" class="input-xlarge" placeholder="">
+      <label class="control-label" for="inputAddressHome">Home Mailing Address</label>
+      <input type="text" id="inputHOME_ADDRESS" class="input-xlarge" value="<?= homeaddress ?>">
     </p>
-
+    
+   <!-- <p>
+      <label class="control-label" for="inputAddressWork">Work Address</label>
+      <input type="text" id="inputWORK_ADDRESS" class="input-xlarge" value="<? //= workadress ?>">
+    </p>-->
+    
     <p>
       <label class="control-label" for="inputMobilePhone">Mobile Phone</label>
-      <input type="text" id="inputMOBILE_PHONE" class="input-medium" placeholder="">
+      <input type="text" id="inputMOBILE_PHONE" class="input-medium" value="<?= mobilephone ?>">
     </p>
-
-    <p>
-      <label class="control-label" for="inputSkype">Skype</label>
-      <input type="text" id="inputSKYPE" class="input-small"  placeholder="@username">
-    </p>
-
-    <p><label class="control-label" for="inputTwitter">Twitter</label>
-      <input type="text" id="inputTWITTER" class="input-small" placeholder="@username">
-    </p>
-
     <p>
       <label class="control-label" for="inputDOB">Birthday</label>
       <input type="text" id="inputBIRTHDAY" class="input-small" placeholder="MM/DD/YYYY">
     </p>
-
     <p>
-      <label class="control-label" for="inputBlog">Website</label>
-      <input type="text" id="inputBLOG" class="input" placeholder="e.g. ctrlq.org">
+      <label class="control-label" for="inputHomeWebsite">Personal Website or Blog</label>
+      <input type="text" id="inputHOME_WEBSITE" class="input" value="<?= homewebsite ?>">
     </p>
     <p>
+      <label class="control-label" for="inputProfile">Online Profile</label>
+      <input type="text" id="inputPROFILE" class="input" value="<?= profile ?>">
+    </p>
+    <p>
+      <label class="control-label" for="inputSkype">Skype</label>
+      <input type="text" id="inputSKYPE" class="input-small"  value="<?= skype ?>">
+    </p>
+
+    <p><label class="control-label" for="inputTwitter">Twitter</label>
+      <input type="text" id="inputTWITTER" class="input-small" value="<?= twitter ?>">
+    </p> 
+    <p><label class="control-label" for="inputInstagram">Instagram</label>
+      <input type="text" id="inputINSTAGRAM" class="input-small" value="<?= instagram ?>">
+    </p> 
+    <p>
       <input type="hidden" name="id" value="<?= id; ?>" />
-      <input type="submit" class="btn blue" value="Update Entry" onclick="updateGoogleContacts(); return false;">
+      <input type="submit" class="btn blue" value="Confirm or Update Details" onclick="updateGoogleContacts(); return false;">
     </p>
   </form>
   <hr />
@@ -92,12 +101,15 @@
     contact.FULL_NAME    = $("input#inputFULL_NAME").val();
     contact.HOME_EMAIL   = $("input#inputHOME_EMAIL").val();
     contact.HOME_ADDRESS = $("input#inputHOME_ADDRESS").val();
+    //contact.WORK_ADDRESS = $("input#inputWORK_ADDRESS").val();
     contact.WORK_EMAIL   = $("input#inputWORK_EMAIL").val();
     contact.MOBILE_PHONE = $("input#inputMOBILE_PHONE").val();
-    contact.SKYPE        = $("input#inputSKYPE").val();
-    contact.TWITTER      = $("input#inputTWITTER").val();
-    contact.BLOG         = $("input#inputBLOG").val();
+    contact.BLOG         = $("input#inputHOME_WEBSITE").val();
+    contact.PROFILE      = $("input#inputPROFILE").val();
     contact.BIRTHDAY     = $("input#inputBIRTHDAY").val();
+    contact.SKYPE        = $("input#inputSKYPE").val();
+    contact.INSTAGRAM    = $("input#inputINSTAGRAM").val();
+    contact.TWITTER      = $("input#inputTWITTER").val();
     contact.id           = "<?= id ?>";
 
     google.script.run.withSuccessHandler(progress).labnolUpdateContact(contact);
