@@ -361,15 +361,16 @@ function labnolUpdateContact(contact) {
 
         
       
-      var cfields = c.getCustomFields();
-      for (var i = 0; i < cfields.length; i++) {
-        if (cfields[i].getLabel() == 'Twitter') {
-            cfields[i].setValue(contact.TWITTER);
-          } else if (contact.TWITTER.length) {
-          c.addCustomField("Twitter", "http://twitter.com/" + contact.TWITTER);
+      var cfields = c.getCustomFields(); //Retrieve an array of custom fields for this contact.
+      for (var i = 0; i < cfields.length; i++) { 
+        if (cfields[i].getLabel() == 'Twitter') { //If the label on any of the custom fields is Twitter, do this.
+            cfields[i].setValue(contact.TWITTER); //Set the value for the label Twitter to the html form field TWITTER in form.html
+          } else if (contact.TWITTER.length) { //If there is no label called Twitter do this.
+          c.addCustomField("Twitter", "http://twitter.com/" + contact.TWITTER); //Add the custom field label and value.
         }
       }
 
+  // Since custom fields are dynamic, I think there may be an indexing problem when running this.  Twitter could already be in position 0 for the custom fields on one contact and in position 2 on another.  But it seems that shouldn't matter if the index is looped.
         
       var cfields1 = c.getCustomFields();
       for (var i = 0; i < cfields1.length; i++) {
