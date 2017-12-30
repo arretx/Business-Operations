@@ -1,88 +1,301 @@
+<!--<link href="http://scottresidentialgroup.com/extras/googlecontactsupdate.css" type="text/css" rel="stylesheet" />-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+          
+<style>    
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');    
+* {
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
 
-    <link href="https://ssl.gstatic.com/docs/script/css/add-ons.css" type="text/css" rel="stylesheet" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <style>
-    .contacts {
+body {
+    background-image: url("http://www.jongriffith.com/wp-content/uploads/2017/12/smallfullbody.png"),url("http://www.jongriffith.com/wp-content/uploads/2017/12/nye.png");
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    -webkit-background-size: 180px, cover;
+    -moz-background-size: 180px, cover;
+    -o-background-size: 180px, cover;
+    background-size: 180px, cover;
+
+.header {
+    text-align: center;
+}
+
+}
+::-webkit-input-placeholder {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-color: #000000;
+}
+::-webkit-input-value {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-color: #000000;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 16px;
+}
+
+label {
+    padding: 8px 8px 8px 8px;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 49px;
+    border-radius: 4px;
+    background-color: #ffffff10;
+    line-height: 1.9;
+    width: 210px;
+}
+
+input[type=submit] {
+    font-family: Open Sans;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 20px;
     width: 80%;
     margin: 0 auto;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     overflow-y: auto;
-    padding: 12px;
+    background-color: #ffffff98;
+}
+
+.contactform {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media (max-width: 1130px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
     }
-    .control-label { display: inline-block; min-width: 110px; }
+    label {
+        width: 100%;
+    }
+    input[type=submit] {
+        margin-top: 10px;
+    }
+
+}    
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left: 0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
     </style>
+    
+<div class="container">
 
-<div class="contacts">
+<h1><?= name ?>, I've created a short video for you.</h1>
 
-  <h2 class="title">Google Contacts</h2>
-
+  <p id="video">
+    <div class="video-responsive">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Dmlvs2pZJ4M" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+  
   <p id="message">
-    Please fill-in this form and your contact information will automatically get added to my Google Contacts. Thanks for you time.
+    The following information is coming directly out of my contacts list in my iPhone.  If you would, please confirm and/or update any of the information here it will directly update my contacts in real-time.  If no changes are needed, simply click "No Changes Needed." This information is in my personal address book.  Nobody has access to it but me, and it will remain strictly confidential.  Thanks!  Have a wonderful New Year!
   </p>
 
   <form id="contactform">
-    <p>
-      <label class="control-label" for="inputName">Your Name</label>
-      <input type="text" id="inputFULL_NAME" placeholder="Full Name" value="<?= name ?>">
-    </p>
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputName">Your Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputFULL_NAME" placeholder="Full Name" value="<?= name ?>">
+      </div>
+    </div>
 
-    <p>
-      <label class="control-label" for="inputEmail">Email Address</label>
-      <input type="text" id="inputHOME_EMAIL" class="input-large" value="<?= email ?>">
-    </p>
-
-    <p>
-      <label class="control-label" for="inputWorkEmail">Work Email Address</label>
-      <input type="text" id="inputWORK_EMAIL" class="input-large" value="<?= workemail ?>">
-    </p>
-
-    <p>
-      <label class="control-label" for="inputAddressHome">Home Mailing Address</label>
-      <input type="text" id="inputHOME_ADDRESS" class="input-xlarge" value="<?= homeaddress ?>">
-    </p>
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputEmailHome">Preferred Email Address:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputHOME_EMAIL" class="input-large" value="<?= email ?>" placeholder="something@something.com">
+      </div>
+    </div>
     
-   <!-- <p>
-      <label class="control-label" for="inputAddressWork">Work Address</label>
-      <input type="text" id="inputWORK_ADDRESS" class="input-xlarge" value="<? //= workadress ?>">
-    </p>-->
-    
-    <p>
-      <label class="control-label" for="inputMobilePhone">Mobile Phone</label>
-      <input type="text" id="inputMOBILE_PHONE" class="input-medium" value="<?= mobilephone ?>">
-    </p>
-    <p>
-      <label class="control-label" for="inputDOB">Birthday</label>
-      <input type="text" id="inputBIRTHDAY" class="input-small" placeholder="MM/DD/YYYY">
-    </p>
-    <p>
-      <label class="control-label" for="inputHomeWebsite">Personal Website or Blog</label>
-      <input type="text" id="inputHOME_WEBSITE" class="input" value="<?= homewebsite ?>">
-    </p>
-    <p>
-      <label class="control-label" for="inputProfile">Online Profile</label>
-      <input type="text" id="inputPROFILE" class="input" value="<?= profile ?>">
-    </p>
-    <p>
-      <label class="control-label" for="inputSkype">Skype</label>
-      <input type="text" id="inputSKYPE" class="input-small"  value="<?= skype ?>">
-    </p>
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputAddressHome">Current Home Address:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputHOME_ADDRESS" class="input-xlarge" value="<?= home_address ?>" placeholder="e.g.: 1234 Main St., Anytown, AZ  85001">
+      </div>
+    </div>
 
-    <p><label class="control-label" for="inputTwitter">Twitter</label>
-      <input type="text" id="inputTWITTER" class="input-small" value="<?= twitter ?>">
-    </p> 
-    <p><label class="control-label" for="inputInstagram">Instagram</label>
-      <input type="text" id="inputINSTAGRAM" class="input-small" value="<?= instagram ?>">
-    </p> 
-    <p>
-      <input type="hidden" name="id" value="<?= id; ?>" />
-      <input type="submit" class="btn blue" value="Confirm or Update Details" onclick="updateGoogleContacts(); return false;">
-    </p>
+<!-- JMG ADD -->
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputAddressWork">Current Work Address:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputWORK_ADDRESS" class="input-xlarge" value="<?= work_address ?>" placeholder="e.g.: 1234 Main St., Anytown, AZ  85001">
+      </div>
+    </div>
+
+<!-- END ADD -->
+
+    <div class="row">
+      <div class="col-25">  
+        <label class="control-label" for="inputMobilePhone">Mobile Phone:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="30" id="inputMOBILE_PHONE" class="input-medium" value="<?= mobile_phone ?>" placeholder="e.g: 000-000-0000">
+      </div>
+    </div>
+
+<!-- JMG ADD -->
+    
+    <div class="row">
+      <div class="col-25">  
+        <label class="control-label" for="inputWorkPhone">Work Phone:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="30" id="inputWORK_PHONE" class="input-medium" value="<?= work_phone ?>" placeholder="e.g.: 000-000-0000">
+      </div>
+   </div>    
+
+<!-- END ADD -->
+    
+    <div class="row"> 
+      <div class="col-25">
+        <label class="control-label" for="inputSkype">Skype:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="inputSKYPE" class="input-small"  placeholder="@username">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputTwitter">Twitter:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="inputTWITTER" class="input-small" value="<?= twitter.replace('http://twitter.com/','') ?>" placeholder="@username">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputInstagram">Instagram:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="inputINSTAGRAM" class="input-small" value="<?= instagram.replace('http://instagram.com/','') ?>" placeholder="@username">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputDOB">Birthday:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="inputBIRTHDAY" class="input-small" value="<?= birthday ?>" placeholder="MM/DD/YYYY">
+      </div>
+    </div>
+    
+    <div class="row"> 
+      <div class="col-25">
+        <label class="control-label" for="inputAnniversary">Anniversary:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="inputANNIVERSARY" class="input-small" value="<?= anniversary ?>" placeholder="MM/DD/YYYY">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputBlog">Blog:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputBLOG" class="input" value="<?= blog ?>" placeholder="http://">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputHomePage">Personal Website:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputHOME_PAGE" class="input" value="<?= home_page ?>" placeholder="http://">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label class="control-label" for="inputWorkWebsite">Business Website:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" size="50" id="inputWORK_WEBSITE" class="input" value="<?= work_website ?>" placeholder="http://">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <input type="hidden" name="id" value="<?= id; ?>" />
+      </div>
+      <div class="col-75">
+        <input type="submit" class="btn blue" value="Update Your Contact Record" onclick="updateGoogleContacts(); return false;">&nbsp;
+        <input type="submit" class="btn blue" value="No Changes Needed" onclick="noChangesNeeded(); return false;">
+      </div>
+    </div>
+    
   </form>
-  <hr />
-  <h3>Need help?</h3>
-  <p>If you have any questions, refer to this <a href="http://www.labnol.org/?p=27306">tutorial</a> or watch the <a target="_blank" href="http://www.youtube.com/watch?v=SMxvZgK4BMg">YouTube video</a>. The source code is available on <a href="http://ctrlq.org/" target="_blank">ctrlq.org</a>.</p>
-
+  
 </div>
 
 
@@ -90,9 +303,18 @@
 <script>
 
   function progress() {
-    $("#message").html("Your contact details have been updated in my address book. Thanks!");
+    $("#message").html("Thank you!  My iPhone just received your update.");
     return;
   }
+
+  function noChangesNeeded() {
+  
+    $("#contactform").hide();
+    $("#message").html("Okay!  We won't make any changes then.  Thank you for your time!");
+    
+return false;
+
+}
 
   function updateGoogleContacts() {
 
@@ -100,22 +322,30 @@
 
     contact.FULL_NAME    = $("input#inputFULL_NAME").val();
     contact.HOME_EMAIL   = $("input#inputHOME_EMAIL").val();
+   
+    //JMG ADD
+    
     contact.HOME_ADDRESS = $("input#inputHOME_ADDRESS").val();
-    //contact.WORK_ADDRESS = $("input#inputWORK_ADDRESS").val();
-    contact.WORK_EMAIL   = $("input#inputWORK_EMAIL").val();
-    contact.MOBILE_PHONE = $("input#inputMOBILE_PHONE").val();
-    contact.BLOG         = $("input#inputHOME_WEBSITE").val();
-    contact.PROFILE      = $("input#inputPROFILE").val();
-    contact.BIRTHDAY     = $("input#inputBIRTHDAY").val();
-    contact.SKYPE        = $("input#inputSKYPE").val();
+    contact.WORK_ADDRESS = $("input#inputWORK_ADDRESS").val();
+    contact.WORK_PHONE   = $("input#inputWORK_PHONE").val();
+    contact.WORK_WEBSITE = $("input#inputWORK_WEBSITE").val();
+    contact.ANNIVERSARY  = $("input#inputANNIVERSARY").val();
     contact.INSTAGRAM    = $("input#inputINSTAGRAM").val();
+    contact.HOME_PAGE    = $("input#inputHomePage").val();
+    
+    //END ADD
+    
+    contact.MOBILE_PHONE = $("input#inputMOBILE_PHONE").val();
+    contact.SKYPE        = $("input#inputSKYPE").val();
     contact.TWITTER      = $("input#inputTWITTER").val();
+    contact.BLOG         = $("input#inputBLOG").val();
+    contact.BIRTHDAY     = $("input#inputBIRTHDAY").val();
     contact.id           = "<?= id ?>";
 
-    google.script.run.withSuccessHandler(progress).labnolUpdateContact(contact);
+    google.script.run.withSuccessHandler(progress).labnolUpdateContact(contact);      
 
     $("#contactform").hide();
-    $("#message").html("Updating my address book, please wait..");
+    $("#message").html("Finalizing Jon's Magical Rolodex with your confidential information...");
 
     return false;
 
