@@ -140,8 +140,11 @@ function labnolGetBasicContact(id) {
       contact.WORK_WEBSITE = c.getUrls(ContactsApp.Field.WORK_WEBSITE)[0].getAddress();
     
     var cfields0 = c.getCustomFields();
-    Logger.log(cfields0);
+    Logger.log("There are " + cfields0.length + " custom fields for this contact.");
       for (var i = 0; i < cfields0.length; i++) {
+        Logger.log(cfields0[i].getLabel());
+        var cfieldlabel = cfields0[i].getValue();
+        Logger.log(cfieldlabel);
         if (cfields0[i].getLabel() == 'Twitter') {
             contact.TWITTER = cfields0[i].getValue();
           }
@@ -152,7 +155,7 @@ function labnolGetBasicContact(id) {
         if (cfields1[i].getLabel() == 'Instagram') {
             contact.INSTAGRAM = cfields1[i].getValue();
           }
-        }
+      }
 
     if(c.getDates(ContactsApp.Field.BIRTHDAY).length) {
         var months = ["0", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
@@ -356,13 +359,26 @@ function labnolUpdateContact(contact) {
 
       //ADD Twitter
 
-      if(contact.TWITTER.length)
-        c.addCustomField("Twitter", "http://twitter.com/" + contact.TWITTER);
+        
+      
+      var cfields = c.getCustomFields();
+      for (var i = 0; i < cfields.length; i++) {
+        if (cfields[i].getLabel() == 'Twitter') {
+            cfields[i].setValue(contact.TWITTER);
+          } else if (contact.TWITTER.length) {
+          c.addCustomField("Twitter", "http://twitter.com/" + contact.TWITTER);
+        }
+      }
 
-      //ADD INSTAGRAM
-
-      if(contact.INSTAGRAM.length)
-        c.addCustomField("Instagram", "http://instagram.com/" + contact.INSTAGRAM);
+        
+      var cfields1 = c.getCustomFields();
+      for (var i = 0; i < cfields1.length; i++) {
+        if (cfields1[i].getLabel() == 'Instagram') {
+            cfields1[i].setValue(contact.INSTAGRAM);
+          } else if (contact.INSTAGRAM.length) {
+          c.addCustomField("Instagram", "http://instagram.com/" + contact.INSTAGRAM);
+        }
+      }
 
       if (contact.BIRTHDAY.length) {
 
