@@ -11,15 +11,15 @@ function Initialize() {
     if (googleGROUP) {
 
 
-      var emailSUBJECT  = ['Trying not to drop the ball...', 'Testing the subject line...']
+      var emailSUBJECT  = ['Trying not to drop the ball.', 'Looking for your confirmation.', 'I may have spilled my cup of contacts.', 'Is that your address in my pocket?', 'There\'s no place like home, if I only knew where it was.', 'Do you remember the rolodex?', 'You\'re in control of this one.']
       var randomNumber = Math.floor(Math.random() * (emailSUBJECT.length));
-      Logger.log(emailSUBJECT[randomNumber]);
       var myContacts = googleGROUP.getContacts();
 
       for (i=0; i<myContacts.length; i++) {
 
         var email = myContacts[i].getPrimaryEmail();
-
+        var firstName = myContacts[i].getFullName();
+        Logger.log(firstName);
         if (email && email.length) {
 
           var ID = myContacts[i].getId();
@@ -32,7 +32,7 @@ function Initialize() {
                   "Your information will be directly added to my Google Contacts." +
                     "<br /><br />Thanks,<br />" + NAME;
 
-          GmailApp.sendEmail(email, emailSUBJECT, emailBody,
+          GmailApp.sendEmail(email, emailSUBJECT[randomNumber], emailBody,
                              {htmlBody:emailBody, name:NAME});
         }
       }

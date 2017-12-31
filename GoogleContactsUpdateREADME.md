@@ -1,10 +1,10 @@
-## About GoogleContactsUpdate.gs
+# About GoogleContactsUpdate.gs
 
 This script, when authorized and given the proper permissions, analyzes your Google Contacts and sends an email to every contact that you've assigned to a specific label (Group).  That e-mail contains a link that will direct them to a form that displays their information, giving them the opportunity to confirm or change anything that may not be accurate.  
 
 Upon submission of that form, their contact data will automatically be updated in your contacts.
 
-## Credited to:
+# Credited to:
 
 _Original script was written by Amit Agarwal (Labnol) [amit@labnol.org](mailto:amit@labnol.org) and can be found here:_
 https://www.labnol.org/internet/google-contacts-updated/27306/  
@@ -14,12 +14,12 @@ https://www.labnol.org/internet/google-contacts-updated/27306/
 Thank you, Amit.  As an amateur coder, you've laid the groundwork for me to learn more about programming and as a result, I've been able to greatly enhance the functions of this script and understand more about Google Scripting.
 
 
-## WARNING
+# WARNING
 DEBUGGING THIS SCRIPT _**WILL**_ TRIGGER THE E-MAIL TO ANY CONTACTS IN THE GROUP YOU SPECIFY.  MAKE SURE YOU SET THE VARIABLE "GROUP" TO A GROUP THAT _**ONLY YOU ARE ASSIGNED TO**_ FOR TESTING BEFORE GOING LIVE WITH YOUR CONTACTS.
 
 Otherwise, you may have an embarrassing apology to write, and you might end up with a bunch of updated contacts that weren't ready to be updated.
 
-## Current Version
+# Previous Version
 
 There were limitations to the original script.
 
@@ -30,6 +30,7 @@ There were limitations to the original script.
 3.  Not every field available in Google Contacts was offered.
 4.  No data validation in the form.
 
+# Current Version
 
 Feature changes are listed below:
 
@@ -69,6 +70,7 @@ _(Note: Google considers the email address in position 0 to be the primary email
 - At line 116, we added a for loop that grabs the values of the custom fields Twitter, Instagram, and Snapchat if they exist and assign them to the contact.field for the HTML form.
 - For the MOBILE_PHONE entry, when updating the data, we strip the input number of all non numerical characters and spaces and apply a telephone format 000-000-0000 forcing all phone numbers updated to adopt this format.
 - Added all new fields to the updateGoogleContacts() function.
+- Added random subject lines to the initial e-mail that goes out to contacts.
 
 ## Summary
 
