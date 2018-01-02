@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url("http://www.jongriffith.com/wp-content/uploads/2017/12/smallfullbody.png"),url("http://www.jongriffith.com/wp-content/uploads/2017/12/nye.png");
+    background-image: url("http://www.jongriffith.com/wp-content/uploads/2018/01/smallfullbody.png"),url("http://www.jongriffith.com/wp-content/uploads/2017/12/nye.png");
     background-position: right bottom, left top;
     background-repeat: no-repeat, no-repeat;
     background-attachment: fixed, fixed;
@@ -133,16 +133,20 @@ input[type=submit]:hover {
     position:absolute;
 }
 
+.img {
+  width: 100%;
+  }
+
 </style>
 
 <div class="container">
 
-  <h1><?= name ?>, I've created a short video for you.</h1>
+  <h1><?= name ?>, is this information correct?</h1>
 
-  <p id="video">
+  <!--<p id="video">
     <div class="video-responsive">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Dmlvs2pZJ4M" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-    </div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Dmlvs2pZJ4M?autoplay=1&controls=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>-->
     
   <p id="message">
     The following information is coming directly out of my contacts list in my iPhone.  If you would, please confirm and/or update any of the information here it will directly update my contacts in real-time.  If no changes are needed, simply click "No Changes Needed." This information is in my personal address book.  Nobody has access to it but me, and it will remain strictly confidential.  Thanks!  Have a wonderful New Year!
@@ -224,13 +228,13 @@ input[type=submit]:hover {
    
 <div class="row">
   <div class="col-25">
-    <label class="control-label" for="inputSnapchat">Snapchat:</label>
+    <label class="control-label" for="inputYOUTUBE">YouTube Channel:</label>
   </div>
   <div class="col-75">
-    <input type="text" id="inputSNAPCHAT" class="input-small" value="<?= snapchat.replace('http://snapchat.com/','') ?>" placeholder="@username">
+    <input type="text" id="inputYOUTUBE" class="input-small" value="<?= youtube ?>" placeholder="Paste your YouTube Channel Link Here">
   </div>
-</div>   
-   
+</div>
+
 <div class="row">
   <div class="col-25">
     <label class="control-label" for="inputBirthday">Birthday:</label>
@@ -260,7 +264,7 @@ input[type=submit]:hover {
  
 <div class="row">
   <div class="col-25">
-    <label class="control-label" for="inputHomeWebsite">Personal Website::</label>
+    <label class="control-label" for="inputHomeWebsite">Personal Website:</label>
   </div>
   <div class="col-75">
     <input type="text" id="inputHOME_WEBSITE" class="input" value="<?= home_website ?>" placeholder="http://">
@@ -269,7 +273,7 @@ input[type=submit]:hover {
 
 <div class="row">
   <div class="col-25">
-    <label class="control-label" for="inputWorkWebsite">Business Website::</label>
+    <label class="control-label" for="inputWorkWebsite">Business Website:</label>
   </div>
   <div class="col-75">
     <input type="text" id="inputWORK_WEBSITE" class="input" value="<?= work_website ?>" placeholder="http://">
@@ -294,7 +298,11 @@ input[type=submit]:hover {
 <script>
 
   function progress() {
-    $("#message").html("Your contact details have been updated in my address book. Thanks!");
+    $("#message").html("<h3>Your contact details have been updated in my address book. Thanks!</h3><br /><center><img src=\"http://www.jongriffith.com/wp-content/uploads/2018/01/happy-new-year-wallpaper.jpg\" width=\"100%\"></center>");
+    return;
+  }
+  function noChanges() {
+    $("#message").html("<h3>Yessssss!  I got something right for once!  Thanks!</h3><br /><center><img src=\"http://www.jongriffith.com/wp-content/uploads/2018/01/happy-new-year-wallpaper.jpg\" width=\"100%\"></center>");
     return;
   }
 
@@ -303,14 +311,14 @@ input[type=submit]:hover {
     var contact = {};
 
     contact.FULL_NAME    = $("input#inputFULL_NAME").val();
-    contact.HOME_EMAIL   = $("input#inputHOME_EMAIL").val();
+    contact.EMAIL        = $("input#inputHOME_EMAIL").val();
     contact.HOME_ADDRESS = $("input#inputHOME_ADDRESS").val();
     contact.WORK_ADDRESS = $("input#inputWORK_ADDRESS").val();
     contact.MOBILE_PHONE = $("input#inputMOBILE_PHONE").val();
     contact.SKYPE        = $("input#inputSKYPE").val();
     contact.TWITTER      = $("input#inputTWITTER").val();
     contact.INSTAGRAM    = $("input#inputINSTAGRAM").val();
-    contact.SNAPCHAT     = $("input#inputSNAPCHAT").val();
+    contact.YOUTUBE     = $("input#inputYOUTUBE").val();
     contact.BLOG         = $("input#inputBLOG").val();
     contact.HOME_WEBSITE = $("input#inputHOME_WEBSITE").val();
     contact.WORK_WEBSITE = $("input#inputWORK_WEBSITE").val();
@@ -321,10 +329,21 @@ input[type=submit]:hover {
     google.script.run.withSuccessHandler(progress).labnolUpdateContact(contact);      
 
     $("#contactform").hide();
-    $("#message").html("Updating my address book, please wait..");
+    $("#message").html("<h3>The employees are hard at working making sure we have everything in order...please stand by for confirmation...</h3><br /><br /><center><img src=\"http://www.jongriffith.com/wp-content/uploads/2018/01/loading_spinner.gif\" width=\"100\"><br /><img src=\"https://media.giphy.com/media/bSJB8Ju3063qU/giphy.gif\" width=\"250\"></center>");
 
     return false;
 
   }
 
+  function noChangesNeeded() {
+    
+    google.script.run.withSuccessHandler(progress);     
+
+    $("#contactform").hide();
+    $("#message").html("Confirming no changes needed...<br /><br />");
+
+    return false;
+    
+   }
+  
 </script>

@@ -1,7 +1,7 @@
 function Initialize() {
 
   var NAME  = "Jon Griffith";           // Signature on email that goes out to contacts.
-  var GROUP = "superhero";     // Label that a contact must be added to in order to receive the e-mail when script is run.
+  var GROUP = "ContactUpdate";     // Label that a contact must be added to in order to receive the e-mail when script is run.
 
 
   try {
@@ -9,33 +9,71 @@ function Initialize() {
     var googleGROUP = ContactsApp.getContactGroup(GROUP);
 
     if (googleGROUP) {
-
-
-      var emailSUBJECT  = ['Trying not to drop the ball.', 'Looking for your confirmation.', 'I may have spilled my cup of contacts.', 'Is that your address in my pocket?', 'There\'s no place like home, if I only knew where it was.', 'Do you remember the rolodex?', 'You\'re in control of this one.']
-      var randomNumber = Math.floor(Math.random() * (emailSUBJECT.length));
+      
       var myContacts = googleGROUP.getContacts();
-
-      for (i=0; i<myContacts.length; i++) {
-
-        var email = myContacts[i].getPrimaryEmail();
-        var firstName = myContacts[i].getFullName();
-        Logger.log(firstName);
-        if (email && email.length) {
-
-          var ID = myContacts[i].getId();
-          ID = ID.substr(ID.lastIndexOf("/") + 1);
-
-          var emailBody = "Hi,<br /><br />" +
-            "Would you please take a moment and update your contact information in my address book. <br /><br />" +
-              "Please <a href='" + ScriptApp.getService().getUrl() + "?id=" +
-                ID + "'>click here</a> and fill-in the required details." +
-                  "Your information will be directly added to my Google Contacts." +
-                    "<br /><br />Thanks,<br />" + NAME;
-
-          GmailApp.sendEmail(email, emailSUBJECT[randomNumber], emailBody,
-                             {htmlBody:emailBody, name:NAME});
+      
+      var emailSubjectOptions  = ['Trying not to drop the ball.', 'Looking for your confirmation.', 'I may have spilled my cup of contacts.', 'Is that your address in my pocket?', 'There\'s no place like home, if I only knew where it was.', 'Do you remember the rolodex?', 'You\'re in control of this one.']
+        var subjectRandomNumber = Math.floor(Math.random() * (emailSubjectOptions.length));
+        var emailSubject = emailSubjectOptions[subjectRandomNumber];  
+      
+      var emailSalutationOptions = ['Hello ', 'Greetings ', 'Hi ']
+        var salutationRandomNumber = Math.floor(Math.random() * (emailSalutationOptions.length));
+        var emailSalutation = emailSalutationOptions[salutationRandomNumber];
+      
+      var emailMessageOptions = ['Everyone\'s okay with the ball dropping in Times Square, but when it comes to keeping information up to date, we often find we\'ve dropped the ball.',
+                                 'Every once in a while it\'s good to confirm the tiny details in life, and I need your help confirming some details.',
+                                 'You\'ve probably seen how a Champagne bottle can be sliced open with a saber, and what a mess it can make.  The same could be said of the modern day rolodex.',
+                                 'Most of the time when I find someone\'s card in my pocket, it\'s after my pants went through the wash, and that\'s when I realize I may have missed something.',
+                                 'Don\'t worry.  I\'m not lost.  However, I may not have your information correct, which means I might get lost if I started looking for you.',
+                                 'I do... and even though we have fancy computers keeping all of our information straight, it\'s still quite possible that I have no idea what your mailing address is.  I thought I\'d touch base with you to see if we can\'t figure that out.',
+                                 'What better way to make sure I\'ve got all of my ducks in a row than to give you complete control over these particular ducks.']
+      
+      var emailBody = emailMessageOptions[subjectRandomNumber] + "<br /><br />";
+      var emailClosing = "With information constantly changing, it's tough to keep up, which is why I'm sweeping through my iPhone contacts to make sure that I have all of my information correct for you.<br /><br />"
+      
+      function sendContactEmail() {
+        
+        for (i=0; i<myContacts.length; i++) {
+          
+          var email = myContacts[i].getPrimaryEmail();
+          var firstName = myContacts[i].getGivenName();
+          var fullName = myContacts[i].getFullName();
+          Logger.log("Primary email is " + email);
+          Logger.log("First Name is " + firstName);
+          if (email && email.length) {
+            
+            var ID = myContacts[i].getId();
+            ID = ID.substr(ID.lastIndexOf("/") + 1);
+            var emailLink = "<a href='" + ScriptApp.getService().getUrl() + "?id=" + ID + "'>Here's what my iPhone says about you.</a><br /><br />" + NAME;
+            var salutation = emailSalutation + " " + firstName + ",<br /><br />";
+            
+            var emailMessage = salutation + emailBody + emailClosing + emailLink;
+            
+            
+            //"<a href='" + ScriptApp.getService().getUrl() + "?id=" + ID + "'>when you click this link</a> is your information as I currently have it in my iPhone contacts list.<br /><br />" + NAME;
+            
+            
+           GmailApp.sendEmail(email, emailSubject, emailMessage,
+                               {htmlBody:emailMessage, name:NAME});
+            
+            Logger.log("Email: " + email);
+            Logger.log("Subject: " + emailSubject);
+            Logger.log("Body: " + emailMessage);
+            
+          } else {
+           
+            GmailApp.sendEmail(Session.getEffectiveUser().getEmail(),
+                               "Problem: " + fullName, "No Primary E-mail Address");
+          }
         }
       }
+      
+     sendContactEmail();
+      
+     
+      
+      
+      
     }
   } catch (e) {
     throw e.toString();
@@ -54,7 +92,7 @@ function doGet(e) {
   html.skype = contact.SKYPE;
   html.twitter = contact.TWITTER;
   html.instagram = contact.INSTAGRAM;
-  html.snapchat = contact.SNAPCHAT;
+  html.youtube = contact.YOUTUBE;
   html.blog = contact.BLOG;
   html.home_website = contact.HOME_WEBSITE;
   html.work_website = contact.WORK_WEBSITE;
@@ -76,7 +114,7 @@ function labnolGetBasicContact(id) {
   contact.SKYPE = "";
   contact.TWITTER = "";
   contact.INSTAGRAM = "";
-  contact.SNAPCHAT = "";
+  contact.YOUTUBE = "";
   contact.BLOG = "";
   contact.HOME_WEBSITE = "";
   contact.WORK_WEBSITE = "";
@@ -89,7 +127,7 @@ function labnolGetBasicContact(id) {
   var c = ContactsApp.getContactById(id);
 
   if (c) {
-
+    
     if (c.getFullName().length)
       contact.NAME = c.getFullName();
 
@@ -97,10 +135,9 @@ function labnolGetBasicContact(id) {
       contact.EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
     } else {
       contact.EMAIL = c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].getAddress();
-      Logger.log(contact.EMAIL);
       c.addEmail(ContactsApp.Field.HOME_EMAIL, contact.EMAIL);
       c.getEmails(ContactsApp.Field.WORK_EMAIL)[0].deleteEmailField();
-      c.getEmails(ConatctsApp.Field.HOME_EMAIL)[0].setAsPrimary();
+      c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].setAsPrimary();
     }
     if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length) {
       contact.HOME_ADDRESS = c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].getAddress();
@@ -123,8 +160,8 @@ function labnolGetBasicContact(id) {
       if (cfields[i].getLabel() == 'Instagram') {
         contact.INSTAGRAM = cfields[i].getValue();
       }
-      if (cfields[i].getLabel() == 'Snapchat') {
-        contact.SNAPCHAT = cfields[i].getValue();
+      if (cfields[i].getLabel() == 'YouTube') {
+        contact.YOUTUBE = cfields[i].getValue();
       }
     }
 
@@ -149,7 +186,7 @@ function labnolGetBasicContact(id) {
           "/" + c.getDates(ContactsApp.Field.BIRTHDAY)[0].getDay() +
           "/" + c.getDates(ContactsApp.Field.BIRTHDAY)[0].getYear();
     }
-
+        
   }
   return contact;
 }
@@ -174,7 +211,7 @@ function labnolGetContact(id) {
         contact.FULL_NAME = c.getFullName();
 
       if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
-        contact.HOME_EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
+        contact.EMAIL = c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].getAddress();
 
       if(c.getAddresses(ContactsApp.Field.HOME_ADDRESS).length) {
         contact.HOME_ADDRESS = c.getAddresses(ContactsApp.Field.HOME_ADDRESS)[0].getAddress();
@@ -191,7 +228,24 @@ function labnolGetContact(id) {
 
       if(c.getIMs(ContactsApp.Field.SKYPE).length)
         contact.SKYPE = c.getIMs(ContactsApp.Field.SKYPE)[0].getAddress();
-
+      
+      var cfields = c.getCustomFields();
+      
+            //*** add
+    for (var i = 0; i < cfields.length; i++) {
+      if (cfields[i].getLabel() == 'Twitter') {
+        contact.TWITTER = cfields[i].getValue();
+      }
+      if (cfields[i].getLabel() == 'Instagram') {
+        contact.INSTAGRAM = cfields[i].getValue();
+      }
+      if (cfields[i].getLabel() == 'YouTube') {
+        contact.YOUTUBE = cfields[i].getValue();
+      }
+    }
+      
+      //*** end add
+      
       if(c.getUrls(ContactsApp.Field.BLOG).length)
         contact.BLOG = c.getUrls(ContactsApp.Field.BLOG)[0].getAddress();
 
@@ -239,12 +293,13 @@ function labnolUpdateContact(contact) {
     if (c) {
 
       c.setFullName(contact.FULL_NAME);
-
+      
       if(c.getEmails(ContactsApp.Field.HOME_EMAIL).length)
         c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].deleteEmailField();
 
-      if(contact.HOME_EMAIL.length)
-        c.addEmail(ContactsApp.Field.HOME_EMAIL, contact.HOME_EMAIL);
+      if(contact.EMAIL.length)
+        c.addEmail(ContactsApp.Field.HOME_EMAIL, contact.EMAIL);
+        c.getEmails(ContactsApp.Field.HOME_EMAIL)[0].setAsPrimary();
 
       if(c.getIMs(ContactsApp.Field.SKYPE).length)
         c.getIMs(ContactsApp.Field.SKYPE)[0].deleteIMField();
@@ -269,10 +324,8 @@ function labnolUpdateContact(contact) {
 
       if (contact.MOBILE_PHONE.length) {
         var phoneFormatted = contact.MOBILE_PHONE;
-        Logger.log(phoneFormatted);
         phoneFormatted = phoneFormatted.replace(/[^\d]+/g, '')
         .replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-        Logger.log(phoneFormatted);
         c.addPhone(ContactsApp.Field.MOBILE_PHONE, phoneFormatted);
       }
 
@@ -312,16 +365,17 @@ function labnolUpdateContact(contact) {
         }
         c.addCustomField("Instagram", "http://instagram.com/" + contact.INSTAGRAM);
       }
-         if(contact.SNAPCHAT.length) {
+         if(contact.YOUTUBE.length) {
         var cfields = c.getCustomFields();
         for (var i = 0; i < cfields.length; i++) {
-          if (cfields[i].getLabel() == 'Snapchat') {
+          if (cfields[i].getLabel() == 'YouTube') {
             cfields[i].deleteCustomField();
           }
         }
-        c.addCustomField("Snapchat", contact.SNAPCHAT);
+        c.addCustomField("YouTube", contact.YOUTUBE);
 
       }
+     
       if (contact.BIRTHDAY.length) {
 
         var months =
@@ -356,17 +410,41 @@ function labnolUpdateContact(contact) {
 
         c.addDate(ContactsApp.Field.ANNIVERSARY, months[parseFloat(date[0])], parseFloat(date[1]), parseFloat(date[2]));
 
+      
       }
-
+      
+      Logger.log("Name :: " + c.getFullName());
+      
+      var GROUP = "ContactUpdate";
+    
+      var fullName = c.getFullName();
+      var removeContact = ContactsApp.getContactsByName(fullName);
+      
+      Logger.log("Number of contacts found: " + removeContact);
+      
+      var removeGroup = ContactsApp.getContactGroup(GROUP);
+      
+      Logger.log("Number of Groups found: " + removeGroup);
+      Logger.log("Name of Group found: " + removeGroup.getName());
+      
+      for (var i in removeContact) {
+        removeContact[i] = removeContact[i].removeFromGroup(removeGroup);
+        
+      
+      }
+           
       GmailApp.sendEmail(Session.getEffectiveUser().getEmail(),
-                        "Updated: " + contact.FULL_NAME + " (" + contact.HOME_EMAIL + ")",
+                        "Updated: " + contact.FULL_NAME + " (" + contact.EMAIL + ")",
                         Utilities.jsonStringify(contact));
-
-
+    
     }
 
   } catch (e) {
 
   }
 
+  
+  
 }
+
+  
