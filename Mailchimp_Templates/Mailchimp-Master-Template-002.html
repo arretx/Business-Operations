@@ -1,0 +1,92 @@
+<style type="text/css">
+    @media only screen and (max-width: 480px){
+        #templateColumns{
+            width:100% !important;
+        }
+
+        .templateColumnContainer{
+            display:block !important;
+            width:100% !important;
+        }
+
+        .columnImage{
+            height:auto !important;
+            max-width:480px !important;
+            width:100% !important;
+        }
+
+        .headerImage{
+            height:auto !important;
+            max-width:600px !important;
+            width:100% !important;
+        }
+
+        .leftColumnContent{
+            font-size:16px !important;
+            line-height:125% !important;
+        }
+
+        .rightColumnContent{
+            font-size:16px !important;
+            line-height:125% !important;
+        }
+    }
+body { font-family: sans-serif, Roboto; font-size: 14px; }
+a { text-decoration: none;}
+.leftColumnContent { width: 66%; padding-right:2px; }
+.rightColumnContent { width: 33%; padding-left:2px; }
+.leftColumnContent h1 { color: #fff; background-color: #000; padding:4px; font-size: 16px; text-align: center;}
+.headerImage { padding-bottom: 5px; }
+.columnImage { padding: 0px;}
+</style>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
+  <tr>
+<!-- Header Image -->
+    <td align="center" valign="top" width="100%" class="templateColumnContainer"><img src="https://gallery.mailchimp.com/c3a02bd33c21a022090a61224/images/1f74c898-704e-46cf-a380-e3fdb568628d.jpg" class="headerImage" width="100%">
+    </td>
+<!-- 2 Columns -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td align="center" valign="top" width="100%" class="templateColumnContainer">
+<!-- Left Column -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="leftColumnContent">
+                      <h1>Today's News Udpate</h1>
+<!--RSS News Feed Single Article-->
+                    *|FEEDBLOCK:http://scottresidentialgroup.com/feed/|*
+                    *|FEEDITEMS:[$count=1, $constrain_rss_img=Y]|*
+                    *|FEEDITEM:IMAGE|*
+                    <a href="*|FEEDITEM:URL|*" style="font-size: 22px;">
+         *|FEEDITEM:TITLE|*
+    </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" class="leftColumnContent">
+                        <h1>Left Column</h1>
+                        Lorem ipsum dolor sit amet.
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="center" valign="top" width="50%" class="templateColumnContainer">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="rightColumnContent">
+                        <img src="http://placekitten.com/g/480/300" width="280" style="max-width:280px;" class="columnImage" />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" class="rightColumnContent">
+                        <h1>Right Column</h1>
+                        Lorem ipsum dolor sit amet.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+  </tr>
+</table>

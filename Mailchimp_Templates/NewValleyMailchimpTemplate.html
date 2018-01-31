@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+
+  <style type="text/css">
+	@media only screen and (max-width: 480px){
+		#templateColumns{
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 480px){
+		.templateColumnContainer{
+			display:block !important;
+			width:100% !important;
+		}
+@media only screen and (max-width: 480px){
+		.templateColumnContainerRight{
+			display:block !important;
+			width:100% !important;
+            border-left-style: none !important;
+		}
+}	@media only screen and (max-width: 480px){
+		.columnImage{
+			height:auto !important;
+			max-width:480px !important;
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 480px){
+		.leftColumnContent{
+			font-size:16px !important;
+			line-height:125% !important;
+            padding-left: 0px !important;
+		}
+@media only screen and (max-width: 480px){
+		.leftColumnContent h1 {
+			line-height: 1.2em !important;
+		}
+}	@media only screen and (max-width: 480px){
+		.rightColumnContent{
+			font-size:16px !important;
+			line-height:125% !important;
+            border-style: none !important;
+            border-color: none !important;
+            border-width: 0px !important;
+            padding-right: 0px !important;
+		}
+
+}		body{
+			background:#FFF;
+			font-family:"Arial";
+		}
+		.templateColumnContainer h2{
+			font-size:30px;
+			font-weight:bold;
+			margin-top:-10px;
+			margin-bottom:4px;
+		}
+        .templateColumnContainerRight h2{
+			font-size:30px;
+			font-weight:bold;
+			margin-top:-10px;
+			margin-bottom:4px;
+		}
+        .templateColumnContainerRight {
+            border-left-style: dotted;
+            border-left-size: 1px;
+            border-left-color: #999;
+		hr{
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+        .leftColumnContent {
+            padding-right: 10px;
+            padding-left: 5px;
+            }
+        .leftColumnContent h1 {
+            font-size: 22px;
+            margin:0;
+            text-align: left;
+            }
+        .rightColumnContent {
+            padding-right: 5px;
+            }
+        .sideBarContainer { }
+        .sideBarWidget {
+            font-size: 14px;
+            }
+        .sideBarWidget .alert {
+            border-width: 0px 0px 0px 5px;
+            border-color: blue;
+            border-style: solid;
+            padding-left: 5px;
+            }
+        .rightColumnContent h1 {
+            margin:0;
+            font-size: 22px;
+            }
+        li { margin-bottom: 15px; }
+</style></head>
+  *|FEEDBLOCK:https://newvalleychurch.github.io/feed.media.xml|*
+<table border="0" cellpadding="0" cellspacing="0" id="templateColumns" width="100%">
+	<tr>
+		<td align="center" class="templateColumnConatiner" colspan="3" valign="top" width="100%">
+			<a href="http://newvalleychurch.github.io"><img alt="256093f7-d3e4-400e-bf81-39472e7c737a.jpg" src="https://gallery.mailchimp.com/c3a02bd33c21a022090a61224/images/256093f7-d3e4-400e-bf81-39472e7c737a.jpg"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" class="templateColumnContainer" colspan="2" valign="top" width="100%">
+			<hr>
+			<h2>*|FEED:DESCRIPTION|*<br></h2>for *|FNAME|* on *|FEED:DATE|*
+			<hr>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" class="templateColumnContainer" valign="top" width="66%">
+			*|FEEDITEMS:[$count=1, $constrain_rss_img=Y]|*
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td class="leftColumnContent" valign="top">
+						<h1><a href="https://*|FEEDITEM:SOURCE|*">*|FEEDITEM:TITLE|*</a></h1>
+						<p>*|FEEDITEM:DATE:F j, Y g:Ha|*</p>
+						<p></p>
+						<p style="text-align: justify;">*|FEEDITEM:CONTENT|*</p>
+						<p><a href="https://*|FEEDITEM:SOURCE|*">Keep reading...</a>*|END:FEEDITEMS|*</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td align="center" class="templateColumnContainerRight" valign="top" width="33%">
+
+			<table border="0" cellpadding="10" cellspacing="0" width="100%">
+
+				<tr>
+					<td class="sideBarWidget" valign="top">
+						<p class="alert">This e-mail is sent to its respective team members only when new information is posted.</p>
+
+						<h1>Useful Stuff</h1>
+						<a href="https://newvalleychurch.github.io/media">Media Home Page</a>
+
+						<p><a href="http://www.newvalleychurch.org">New Valley Main Site</a></p>
+						<a href="https://itunes.apple.com/us/podcast/sermons/id1177107159?mt=2">Podcast</a>
+                        <br /><br /><a href="http://www.planningcenteronline.com">Planning Center</a>
+						<h1>Previous Updates</h1>
+
+						<p>*|FEEDITEMS:[$count=5]|* <a href="https://*|FEEDITEM:SOURCE|*">*|FEEDITEM:TITLE|*</a><br>
+						<br>
+						*|END:FEEDITEMS|*</p>
+					</td>
+				</tr>
+			</table>
+		</td>*|END:FEEDBLOCK|*
+	</tr>
+</table>
+<center>
+	<table border="0" cellpadding="0" cellspacing="0" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;" width="100%">
+		<tr>
+			<td align="center" style="padding-top:20px; padding-bottom:20px;" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+					<tr>
+						<td align="center" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;" valign="top">
+							This email was sent to <a href="mailto:*|EMAIL|*" style="color:#404040 !important;" target="_blank">*|EMAIL|*</a><br>
+							<a href="*|ABOUT_LIST|*" style="color:#404040 !important;" target="_blank"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a><br>
+							*|LIST:ADDRESSLINE|*<br>
+							<br>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<style type="text/css">
+	                   @media only screen and (max-width: 480px){
+	                       table#canspamBar td{font-size:14px !important;}
+	                       table#canspamBar td a{display:block !important; margin-top:10px !important;}
+	                   }
+	</style>
+</center>
+</html>
