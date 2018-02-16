@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>NewValleyChurch.github.io</title>
+  <description>A/V Teams Update</description>
+     <atom:link href="http://localhost:4000/feed.audiovisual.xml" rel="self" type="application/rss+xml" />
+  <link>http://localhost:4000</link>
+  <updated>2018-02-15T18:48:46-07:00</updated>
+  
+
+<author>
+ <name></name>
+ <email></email>
+</author>
+
+
+  
+   <item>
+    <title>Activity Log: Pro-Presenter 6.3.2 Update</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Installed latest update from ProPresenter (version 6.3.2)
+    &lt;ul&gt;
+      &lt;li&gt;Fixes crash when clearing a message with a timer&lt;/li&gt;
+      &lt;li&gt;Fixes timeline playback rate not being remembered&lt;/li&gt;
+      &lt;li&gt;Fixes dragging of slides to the timeline&lt;/li&gt;
+      &lt;li&gt;Fixes dragging of communication and multiscreen cues to slides&lt;/li&gt;
+      &lt;li&gt;Fixes alpha not working for syphon output&lt;/li&gt;
+      &lt;li&gt;Fixes issue where the background for the first line of text is clipped&lt;/li&gt;
+      &lt;li&gt;Improves importing of PowerPoint slide notes&lt;/li&gt;
+      &lt;li&gt;Improves PowerPoint slide importer&lt;/li&gt;
+      &lt;li&gt;General stability improvements&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-08-activity-log-audiovisual.html</link>
+    <source>http://localhost:4000/2018-02-08-activity-log-audiovisual.html</source>
+    <pubDate>2018-02-08T13:37:51-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-08-activity-log-audiovisual.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: QU-32 Network Address</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;In accordance with the rest of the network setup, the QU-32 has been assigned a static IP address.&lt;/li&gt;
+  &lt;li&gt;The gateway value on the Qu-32 was incorrect and has been corrected.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</link>
+    <source>http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</source>
+    <pubDate>2018-02-02T14:23:09-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</guid>
+   </item>
+  
+   <item>
+    <title>Stage Display: A Conundrum is Afoot</title>
+    <description>&lt;p&gt;Sadly, after extensive troubleshooting with 2 different adapters and various video drivers, adding a 4th display to the iMac was unsuccessful.  The vision is to have a stage display feed coming out of the iMac that can essentially be fed to any location in the building, which would include the rear display in the sanctuary, and potentially, with HDMI splitters, displays on the stage, or another video input that could stream the feed via mobile devices so we have it in front of us just about anywhere we want it.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-02-display-configuration-update.html</link>
+    <source>http://localhost:4000/2018-02-02-display-configuration-update.html</source>
+    <pubDate>2018-02-02T13:14:49-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-02-display-configuration-update.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: Sanctuary Display Update</title>
+    <description>&lt;h2 id=&quot;display-configuration&quot;&gt;Display Configuration&lt;/h2&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-02-activity-log-audiovisual.html</link>
+    <source>http://localhost:4000/2018-02-02-activity-log-audiovisual.html</source>
+    <pubDate>2018-02-02T12:58:15-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-audiovisual.html</guid>
+   </item>
+  
+   <item>
+    <title>Remote Control of DMX Lighting System</title>
+    <description>&lt;p&gt;One of the exciting aspects of using Ableton Live in a house of worship is the ability to network two or more computers both running Ableton Live together in a Master/Slave environment, where one computer can:&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-30-activity-log-audiovisual.html</link>
+    <source>http://localhost:4000/2018-01-30-activity-log-audiovisual.html</source>
+    <pubDate>2018-01-31T00:07:06-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-30-activity-log-audiovisual.html</guid>
+   </item>
+  
+   <item>
+    <title>Future Plans for Content</title>
+    <description>&lt;p&gt;There are quite literally billions of things that we can do with this site.  Here are a few of my ideas that I’ll be rolling forward with to continue to provide great content that helps you get what you need to do done.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-30-future-plans-for-content-001.html</link>
+    <source>http://localhost:4000/2018-01-30-future-plans-for-content-001.html</source>
+    <pubDate>2018-01-30T23:56:58-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-30-future-plans-for-content-001.html</guid>
+   </item>
+  
+   <item>
+    <title>Documentation Migration Progress</title>
+    <description>&lt;p&gt;Migration of the site from the GitHub WIKI has been a much more time intensive project than originally planned as there’s a fairly steep learning curve regarding the platform that the site is operating on.  But, it’s getting there.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-30-activity-update-general.html</link>
+    <source>http://localhost:4000/2018-01-30-activity-update-general.html</source>
+    <pubDate>2018-01-30T22:53:52-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-30-activity-update-general.html</guid>
+   </item>
+  
+   <item>
+    <title>Update: iMac Default Output Channels</title>
+    <description>&lt;p&gt;After service this past Sunday, the Mexico Missions trip meeting moved into the sanctuary due to attendance.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/update-imac-default-output-channels.html</link>
+    <source>http://localhost:4000/update-imac-default-output-channels.html</source>
+    <pubDate>2018-01-23T22:07:21-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/update-imac-default-output-channels.html</guid>
+   </item>
+  
+   <item>
+    <title>Update: Renewed Vision Recommended Video Adapter</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Renewed Vision recommended that we first try the USB adapter drivers offered at &lt;a href=&quot;http://www.displaylink.com&quot;&gt;www.DisplayLink.com&lt;/a&gt;.  If that doesn’t work…&lt;/li&gt;
+  &lt;li&gt;We will need to purchase the recommended USB adapter from Renewed Vision.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/update-renewed-vision-recommended-usb-adapter.html</link>
+    <source>http://localhost:4000/update-renewed-vision-recommended-usb-adapter.html</source>
+    <pubDate>2018-01-23T00:00:00-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/update-renewed-vision-recommended-usb-adapter.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: Confidence Monitor / Stage Display</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Identified that the Stage Display in the back of the Sanctuary had no power due to a tripped breaker (breaker #17) on the Foyer panel. Turned power on.&lt;/li&gt;
+  &lt;li&gt;Programmed Harmony Remote Control to be able to access the Vizio stage monitor on the back of the sanctuary wall. Tested, success.&lt;/li&gt;
+  &lt;li&gt;Connected TV to WIFI Network.&lt;/li&gt;
+  &lt;li&gt;Named the TV.&lt;/li&gt;
+  &lt;li&gt;Installed J5Create USB to HDMI adapter on iMac.  Initially had a problem with the driver included with the product and the downloaded driver was a viable replacement.&lt;/li&gt;
+  &lt;li&gt;Discovered the Balun receiver on the Stage Display was inactive and would not power up.&lt;/li&gt;
+  &lt;li&gt;Was unsuccessful in connecting the iMac to the Stage Display (Vizio) most likely due to the limitations of the adapter.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-22-activity-log-audiovisual.html</link>
+    <source>http://localhost:4000/2018-01-22-activity-log-audiovisual.html</source>
+    <pubDate>2018-01-22T23:51:46-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-22-activity-log-audiovisual.html</guid>
+   </item>
+  
+ </channel>
+</rss>

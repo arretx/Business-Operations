@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>NewValleyChurch.github.io</title>
+  <description>General Updates</description>
+     <atom:link href="http://localhost:4000/feed.general.xml" rel="self" type="application/rss+xml" />
+  <link>http://localhost:4000</link>
+  <updated>2018-02-15T18:48:46-07:00</updated>
+  <author>
+   <name></name>
+   <email></email>
+  </author>
+
+  
+   <item>
+    <title>Activity Log: Website Content</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Added a network landing page and created a network page sidebar menu.&lt;/li&gt;
+  &lt;li&gt;Started network ip map.&lt;/li&gt;
+  &lt;li&gt;Added network links to topnav and main sidebar menu.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-02-activity-log-general.html </link>
+    <pubDate>2018-02-02T13:43:22-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-general.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: Page Added to Site</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Added a page under the Sound menu called “&lt;a href=&quot;audio-safety-concerns.html&quot;&gt;Audio Safety&lt;/a&gt;” under “Safety Concerns.”&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-02-01-activity-log-general.html </link>
+    <pubDate>2018-02-01T12:45:41-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-02-01-activity-log-general.html</guid>
+   </item>
+  
+   <item>
+    <title>Future Plans for Content</title>
+    <description>&lt;p&gt;There are quite literally billions of things that we can do with this site.  Here are a few of my ideas that I’ll be rolling forward with to continue to provide great content that helps you get what you need to do done.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-30-future-plans-for-content-001.html </link>
+    <pubDate>2018-01-30T23:56:58-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-30-future-plans-for-content-001.html</guid>
+   </item>
+  
+   <item>
+    <title>Documentation Migration Progress</title>
+    <description>&lt;p&gt;Migration of the site from the GitHub WIKI has been a much more time intensive project than originally planned as there’s a fairly steep learning curve regarding the platform that the site is operating on.  But, it’s getting there.&lt;/p&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-30-activity-update-general.html </link>
+    <pubDate>2018-01-30T22:53:52-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-30-activity-update-general.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: Website Content</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Added the following page:  &lt;a href=&quot;dualhead2go.html&quot;&gt;DualHead2Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-15-activity-log-general.html </link>
+    <pubDate>2018-01-15T23:49:22-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-15-activity-log-general.html</guid>
+   </item>
+  
+   <item>
+    <title>Activity Log: Website Content Added</title>
+    <description>&lt;ul&gt;
+  &lt;li&gt;Added new document to WIKI - &lt;a href=&quot;https://github.com/NewValleyChurch/Infrastructure/wiki/Pre-Service-Checklist&quot;&gt;Pre Service Checklist&lt;/a&gt;  This is currently a draft.&lt;/li&gt;
+  &lt;li&gt;Updated Sidebar&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    <link>http://localhost:4000/2018-01-14-activity-log-general.html </link>
+    <pubDate>2018-01-14T23:46:49-07:00</pubDate>
+    <guid isPermaLink="true">http://localhost:4000/2018-01-14-activity-log-general.html</guid>
+   </item>
+  
+ </channel>
+</rss>

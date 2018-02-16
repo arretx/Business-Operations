@@ -1,0 +1,52 @@
+<!-- Pulls from _data network -->
+{% assign departmentname = page.name | remove:"equipment_list_" | remove:".md" %} <!-- determine which department by the file name -->
+{% assign devices = site.data.equipment | where:"department", departmentname | group_by:"servicelocation" %}
+
+{{ devices }}
+
+
+
+<table>
+  {% for e in devices %}
+  {{e}}
+  <tr>
+    {% if forloop.first == true %}
+    {% for item in e %}
+    <th>
+      {{item[0]}}
+    </th>
+    {% endfor %}
+    {% endif %}
+  </tr>
+  <tr>
+    {% for item in e %}
+    <td>
+      {{item[1]}}
+    </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
+
+
+<table>
+{% for e in devices_1 %}
+{{e}}
+    {% if forloop.first == true %}
+    <tr>
+    {% for item in e %}
+        <th>{{item[0]}}</th>
+    {% endfor %}
+    </tr>
+    {% endif %}
+    <tr>
+    {% for item in e %}
+        <td>{{item[1]}}</td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+{% for a in devices_2 %}
+{{a}}
+{% endfor %}
+</table>

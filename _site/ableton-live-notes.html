@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Basics of Ableton Live">
+<meta name="keywords" content=" Ableton">
+<title>Ableton Live Basics | New Valley Church Docs</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="NewValleyChurch.github.io" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar_2").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active_2', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#mysidebar_3").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active_3', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar_2").navgoco('toggle', false);
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar_3").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar_2").navgoco('toggle', true);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar_3").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+
+
+            <!--<a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;-->
+
+            <!--<span class="projectTitle">--><a href="/"><img src="/images/LogoNewValley001.png"> <!--New Valley Church--><!--</span>--></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <! entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="index.html">Home</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">News & Updates<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="all_news.html">All News</a></li>
+                        
+                        
+                        
+                        <li><a href="news_general">General</a></li>
+                        
+                        
+                        
+                        <li><a href="news_audiovisual">A/V Team Blog</a></li>
+                        
+                        
+                        
+                        <li><a href="news_network">Network / IT</a></li>
+                        
+                        
+                        
+                        <li><a href="news_worship">Worship Band</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Network Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="network.html">Overview</a></li>
+                        
+                        
+                        
+                        <li><a href="network-ip-map.html">Device IP Map</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:jon@jongriffith.com?subject=NewValleyChurch Docs feedback&body=I have some feedback about the Ableton Live Basics page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Ableton Live Basics">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <!--<li class="sidebarTitle">
+    General Main Menu
+  </li>-->
+  
+  
+  
+      
+  
+  <li>
+      <a href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a href="index.html">Welcome</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="about-this-site.html">About this Site</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="get_involved.html">Get Involved</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Worship Band</a>
+      <ul>
+          
+          
+          
+          <li><a href="worship_band.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="keyboard_setup.html">Keyboard Setup</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="stage_layout.html">Stage Layout</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Audio Visual Teams</a>
+      <ul>
+          
+          
+          
+          <li><a href="audiovisual.html">Overview</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a href="#">Sound</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a href="sound.html">Sound Home Page</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a href="team_directory.html">Pre-Service Checklist</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a href="faq_sound.html">Troubleshooting / FAQ</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a href="media.html">Media</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="lights.html">Lights</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Network / IT</a>
+      <ul>
+          
+          
+          
+          <li><a href="network.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="network-ip-map.html">Network IP Map</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">News & Updates</a>
+      <ul>
+          
+          
+          
+          <li><a href="all_news.html">All News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="news_general.html">General</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="news_audiovisual.html">AV Teams</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="news_building.html">Building</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="news_networks.html">Network IT</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                
+
+<ul id="mysidebar_2" class="nav">
+  <!--<li class="sidebarTitle">
+    General Main Menu
+  </li>-->
+  
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active_2").parents('li').toggleClass("active_2");</script>
+
+                
+
+<ul id="mysidebar_3" class="nav">
+  <!--<li class="sidebarTitle">
+    General Main Menu
+  </li>-->
+  
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active_3").parents('li').toggleClass("active_3");</script>
+
+            </div>
+
+
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Ableton Live Basics</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Basics of Ableton Live</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/NewValleyChurch/NewValleyChurch.github.io/tree/reviews/pages/media/ableton-live-notes.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-pencil fa-lg"></i> Edit me</a>
+
+    <a target="_blank" href="https://github.com/NewValleyChurch/NewValleyChurch.github.io/issues/new" class="btn btn-default githubIssuesButton" role="button"><i class="fa fa-exclamation-triangle  fa-lg"></i> Report a problem with this page.</a>
+
+    
+
+
+    
+
+  <h4 id="ableton-live">Ableton Live</h4>
+
+<p>Current Version:  9.7.5
+Build: build 2017-10-02</p>
+
+<h1 id="basics-for-nv-setup">Basics for NV setup</h1>
+
+<p>Ableton Live is a DAW (Digital Audio Workstation).  It allows you to record and manipulate audio and MIDI in as many creative ways as you imagine.  Any device that can send or receive MIDI can be integrated into Ableton and controlled by Ableton.</p>
+
+<p>When you load Ableton Live, a default template is loaded and given the name “Untitled.”</p>
+
+<p><strong>This is not the working set.</strong>  <em><strong>It is a snapshot in time of a previous version of the working set.</strong></em></p>
+
+<p>It’s purpose is to create a new workspace with familiar settings, but it does not load recently created new content.  That data is stored in the main set that was created recently.</p>
+
+<h2 id="initial-startup-sequence">Initial Startup Sequence</h2>
+
+<ol>
+  <li>Start Ableton Live.</li>
+  <li>Before you do anything, load the actual New Valley set.  This is found in the File Browser on the left side of Ableton Live and is named “NV Default Setup.als.”</li>
+</ol>
+
+<h3 id="loading-a-new-session">Loading a New Session</h3>
+
+<p>You do not need to do this before each service.  Only at the beginning of the day before the first event.  Both sermons can be captured on the same timeline either back to back, or on duplicated tracks, or if you record in session mode, each sermon can be recorded inside of it’s own Clip Slot.</p>
+
+<ol>
+  <li>In Ableton, there’s a file browser on the left.  The far left contains a list of Categories and Places.</li>
+  <li>Make sure “User Library” is selected on the far left under PLACES.</li>
+  <li>In the next pane to the right, you should see a few entries.  One of those is NV Default Setup.als.</li>
+  <li>Double Click it to load it as the current set in Ableton Live and disregard any of the Untitled document’s settings.</li>
+</ol>
+
+<p>You are now ready to proceed.</p>
+
+<h2 id="elements-of-the-nv-set">Elements of the NV Set</h2>
+
+<p>The following explains the NV Set and it’s basics.</p>
+
+<p>Ableton has two modes for workflow.  The Arrangement View, and the Session View.  Arrangement view situates the tracks horizontally and Session View situates them vertically.  Each view has a purpose.  Press TAB to switch between them.</p>
+
+<p>Arrangement view is great for laying out a song arrangement, or a series of recorded clips over time, like a video editor.</p>
+
+<p>Session View is great for organizing clips that have already been created, and is <em>also</em> great for recording.</p>
+
+<p><em>Understanding how to record the sermon, or other input in both Session and Arrangement view is a good skillset to have.</em></p>
+
+<h3 id="current-track-setup">Current Track Setup</h3>
+
+<p>There are multiple audio tracks in this set.  Each track corresponds to a Fader Strip on the QU-32, with one exception:  the <a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a> track is a <em>MIDI</em> track, and it controls every aspect of the lighting automation.</p>
+
+<p>The QU-32 has Custom Layer mappings (Fader 1-3) which control the <a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a> Plug-in which sits in the <a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a> MIDI Track.  (If you wish to see the devices that are dropped into the track, Double click the <a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a> track title.)</p>
+
+<p>The position of the tracks on the set is relevant only to the organizational strategy chosen.  Where tracks are doesn’t matter as much as setting up each track with the right input source.  The input/output section of each track determines where audio or midi comes from and goes to.</p>
+
+<ul>
+  <li>
+    <p><strong>Wireless Microphones:</strong>  There are 3 tracks assigned to the wireless mics.  They are grouped together, which is why you’ll see 4 columns with one column having a heading that spans the width of the other three columns above their titles.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a>:</strong>  This is the MIDI track that contains the <a href="https://github.com/NewValleyChurch/Infrastructure/wiki/About-DMXIS">DMXIS</a> lighting controller plug-in.</p>
+  </li>
+  <li>
+    <p><strong>Drums:</strong>  There are 6 tracks that have been assigned to the drum faders and they’re all grouped together.</p>
+  </li>
+  <li>
+    <p><strong>Vocals:</strong>  Vox 1 - 4 have been assigned to their own tracks and are also grouped together.</p>
+  </li>
+  <li>
+    <p><strong>All other Instruments and inputs:</strong>  Nothing else is grouped, but the remainder of the set has almost every input that we use.  Horn, Bass, Keys, AC Guitar, etc.  The stage mics do not currently have an input track in this set.</p>
+  </li>
+</ul>
+
+<h3 id="recording">Recording</h3>
+
+<p>Any track that is armed <em>(the little red dot at the bottom of the track in Session view, or to the right in Arrangement View)</em> will record whatever signal is received on that track.  Remember, the track I/O Input setting in Ableton determines the source of the audio.</p>
+
+<h4 id="recording-in-session-mode">Recording in Session Mode</h4>
+
+<p>Recording in Session Mode accomplishes the same goal as Arrangement Mode, but looks a little different.</p>
+
+<p>You can record by arming a track, then by clicking one of the little circles in a clip slot.</p>
+
+<ol>
+  <li>Arm the track(s).  Multiple tracks can be armed by holding down CMD while clicking them.</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Click the little circle in a clip slot to initiate recording.  You will see a count-in on the transport at the top of the screen, and then a clip fills the slot and recording begins.</p>
+  </li>
+  <li>
+    <p>If you want to see the wave file being built in real-time, double click the clip that’s currently recording.  Be careful NOT to click the start arrow on the clip as that will stop recording and queue the clip to replay at the next downbeat on the time transport.</p>
+  </li>
+</ul>
+
+<h4 id="recording-in-arrangement-mode">Recording in Arrangement Mode</h4>
+
+<p>If you switch to Arrangement Mode, the first thing you need to do is click the little red arrow/hamburger menu on the far right side of the “Beat Time Ruler.”  (That’s the measure counter on the top of the track display just to the left of the ‘set’ button.)</p>
+
+<p><strong>This will activate Arrangement Mode</strong> and disengages Session Mode.</p>
+
+<ol>
+  <li><strong>Set up workspace:</strong>  If this is a brand new session (i.e. new Sunday), click somewhere in the track display where no data has been recorded then:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Press Command-A to select all.
+
+- Press Del to delete all recorded events.
+
+- Click and hold on the Beat Time Ruler and drag the mouse up.  This will zoom OUT to the full length of the current set timeline.  Zoom level is a personal preference.  Sometimes you'll zoom in to see more detail.  Sometimes you won't.
+
+- Double click the STOP button in the transport to ensure we're at the beginning of the timeline (1.1.1 or Measure 1, Beat 1, Sixteenth note 1).
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Locate Track:</strong> Find the track you want to record.</li>
+  <li>
+    <p><strong>Arm the track.</strong></p>
+  </li>
+  <li><strong>Prevent Loop:</strong> Make sure the LOOP Switch is OFF.  The loop switch is at the top of the screen.  It looks like a rectangle with a little arrow denoting a loop.</li>
+</ul>
+
+<p><strong>If this is switch is on, the recording will begin at the start of the loop brace and will end at the end the loop brace, looping back to the beginning, overwriting the recording over and over again.</strong></p>
+
+<p>It’s a hard lesson to learn.  :)</p>
+
+<ul>
+  <li>
+    <p><strong>Record:</strong> Once you’re ready…press the Record button in the transport. (Circle at the top of the screen.)  You’ll see a count-in if the Quantization menu is set to anything other than None, and it will begin recording.  If Quantization is set to NONE, recording begins immediately.</p>
+  </li>
+  <li>
+    <p><strong>Zoom Level:</strong> During recording, you might find you’re zoomed in too close, and the play head will have already left the screen to the right.  If this is the case, you can press Shift-CMD-F to have the track display follow the clip recording in real-time.  This will put the playhead in the center of the screen and start auto-scrolling the display.</p>
+  </li>
+  <li><strong>End Recording:</strong> When finished recording, press the Stop button on the transport, then disarm the track so you don’t accidentally overwrite it.</li>
+  <li>
+    <p><strong>Reset Transport</strong>:  Double click the stop button to return to 1.1.1.</p>
+  </li>
+  <li>You’re ready to begin post production.</li>
+</ul>
+
+<h3 id="post-production">Post Production</h3>
+
+<h4 id="preserve">Preserve</h4>
+
+<ol>
+  <li><strong>Name the Clip:</strong></li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-  Clip naming is simple, and it's a great habit to get into.  Plus it makes it easy to know what you're about to hear when you refer to it later. Click the title of the clip in either Session or Arrangement Mode and press Command-R, or right click and Rename.  (If you recorded in Arrangement Mode, the clip will not appear in Session Mode.  That would be done manually.)
+
+- Enter the title of the Sermon or title of the recording as needed and press Enter.  Now your clip has a name.   - **Listen to the clip to ensure there is output.**
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Adjust the clip output level if needed:</strong>
+    <ul>
+      <li>
+        <p>Double click the clip.</p>
+      </li>
+      <li>
+        <p>Make sure you can see the Sample section in the Clip View at the bottom.  If you can’t, click the little circle icon with the squiggly thing next to the E icon.  It should light up, and you should be able to see the Clip View.</p>
+      </li>
+      <li>
+        <p>Adjust the clip Gain to boost the output of the clip.  (Note: This may change in the future as it’s possible to put a Utility device on a return track to boost the output of any given track with less overhead.)</p>
+      </li>
+      <li>
+        <p>Once you have the right level, proceed.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Select the entire clip for exporting:</strong></p>
+
+    <ul>
+      <li>
+        <p>Click the clip header to select it.</p>
+      </li>
+      <li>
+        <p>Right click the clip and click Loop Selection or press CMD-L.  This wraps the start and end point of the sermon with the loop brace and defines the start and end point that will be exported.</p>
+      </li>
+      <li>
+        <p>Select the Loop Brace.  Click somewhere in the middle of the loop brace.  This selects ALL clips in the entire arrangement set and prepares for export inside of the range of the loop brace.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Export the Audio:</strong></p>
+
+    <ol>
+      <li>Click File -&gt; Export Audio/Video.</li>
+    </ol>
+
+    <ul>
+      <li>
+        <p>Settings:</p>
+
+        <ul>
+          <li>
+            <p>If Master is selected as the Rendered Track, then every track that is being sent to Master will be exported to the audio file.  You can, if you wish, select just the sermon audio track for export.  This selection is dependent upon what you’re arrangement looks like and what you do or do not want to be a part of the final file.</p>
+          </li>
+          <li>
+            <p>File type is relatively irrelevant given the fact that we have good cross-compatibility between computer systems, and because we convert to MP3 anyway.  If the file will be needed in a Windows environment, export it as WAV.  If it will only be used in OSX, go with AIFF.  Both can be converted to MP3.</p>
+          </li>
+          <li>
+            <p>Leave the Sample Rate at 48,000.</p>
+          </li>
+          <li>
+            <p>Bit Depth 16.</p>
+          </li>
+          <li>No Dither.</li>
+          <li>All buttons set to OFF.</li>
+        </ul>
+      </li>
+      <li>
+        <p>Click Export and Choose a location for the export.</p>
+      </li>
+      <li>
+        <p>Listen to the exported file to confirm audio routing was correct during export.</p>
+      </li>
+      <li>
+        <p><strong>Please make sure we don’t print a blank audio file.</strong></p>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Convert the file to MP3:</strong>
+    <ul>
+      <li>This can be done right inside of iTunes, or you can use the MP3 converter in the launch bar.</li>
+    </ul>
+  </li>
+  <li><strong>Publish.</strong></li>
+</ul>
+
+<h3 id="cleanup">Cleanup</h3>
+
+<ul>
+  <li>
+    <p>If you recorded in Arrangement Mode, you’ll want to drag the entire clip from Arrangement Mode to the next available clip slot in Session Mode in the corresponding track:</p>
+
+    <ol>
+      <li>
+        <p>In Arrangement Mode, click and hold the clip header (where the name of the clip is).</p>
+      </li>
+      <li>
+        <p>While holding the mouse button, press TAB to switch to Session Mode.</p>
+      </li>
+      <li>
+        <p>Drop the clip into the next available slot down in the track you recorded.  Truth be told, it can be dropped into <em>any</em> audio track, but for organizational purposes, keep the sermons in the appropriate wireless mic track.</p>
+      </li>
+      <li>
+        <p>You can return to Arrangement Mode by pressing tab.  Then, you can delete the clip from Arrangement Mode as it has now been moved to Session Mode.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>If you recorded directly into a slot in Session Mode, start here:</p>
+
+    <ol>
+      <li>Click and drag the clip from the clip slot to the file browser into the Sermons folder.  This step saves the clip into the user library such that it can be dragged into any future set.</li>
+    </ol>
+
+    <ul>
+      <li>Rename the Scene:</li>
+      <li>
+        <p>In Session Mode, click the Scene number in the Master track that lines up with the clip you just dropped into the slot.  (The row that you’re working on.)</p>
+      </li>
+      <li>Rename it to the date of the recording by pressing CMD-R, then press Enter to save.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Press CMD-S to save the entire Set.</strong></p>
+  </li>
+</ul>
+
+<div style="clear: both;"></div>
+    <div class="tags">
+        
+    </div>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/ableton-live-notes.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ableton-live-notes.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://newvalleychurchpages.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2018 New Valley Church. All rights reserved. <br />
+ Site last generated:  Feb 15, 2018 <br />
+<p><img src="images/LogoNewValley001.png" alt="New Valley Church"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-112761625-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

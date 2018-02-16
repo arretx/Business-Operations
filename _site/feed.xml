@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>NewValleyChurch.github.io</title>
+        <description>Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features.</description>
+        <link>http://localhost:4000/</link>
+        <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 15 Feb 2018 18:48:46 -0700</pubDate>
+        <lastBuildDate>Thu, 15 Feb 2018 18:48:46 -0700</lastBuildDate>
+        <generator>Jekyll v3.6.2</generator>
+        
+        <item>
+            <title>Activity Log: iPad and Check-in Configuration</title>
+            <description>&lt;ul&gt;
+  &lt;li&gt;Configured both Brother QL-710W Label printers to be static on the network.&lt;/li&gt;
+  &lt;li&gt;Set administrative password and user password on both printers.&lt;/li&gt;
+  &lt;li&gt;Updated firmware on both printers.&lt;/li&gt;
+  &lt;li&gt;Enabled auto-power on when plugged in and persistent updates at 30 minute intervals.&lt;/li&gt;
+  &lt;li&gt;Configured one iPad for Check-in with static IP address.&lt;/li&gt;
+  &lt;li&gt;Tested connections to printers through network, success.&lt;/li&gt;
+  &lt;li&gt;Tested check-ins on the iPads.  Unfortunately, they are unable to see the printers as of now.&lt;/li&gt;
+  &lt;li&gt;Submitted support request to PlanningCenter.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Thu, 08 Feb 2018 19:34:44 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-08-activity-log-network.html</link>
+            <source>http://localhost:4000/2018-02-08-activity-log-network.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-08-activity-log-network.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Activity Log: Pro-Presenter 6.3.2 Update</title>
+            <description>&lt;ul&gt;
+  &lt;li&gt;Installed latest update from ProPresenter (version 6.3.2)
+    &lt;ul&gt;
+      &lt;li&gt;Fixes crash when clearing a message with a timer&lt;/li&gt;
+      &lt;li&gt;Fixes timeline playback rate not being remembered&lt;/li&gt;
+      &lt;li&gt;Fixes dragging of slides to the timeline&lt;/li&gt;
+      &lt;li&gt;Fixes dragging of communication and multiscreen cues to slides&lt;/li&gt;
+      &lt;li&gt;Fixes alpha not working for syphon output&lt;/li&gt;
+      &lt;li&gt;Fixes issue where the background for the first line of text is clipped&lt;/li&gt;
+      &lt;li&gt;Improves importing of PowerPoint slide notes&lt;/li&gt;
+      &lt;li&gt;Improves PowerPoint slide importer&lt;/li&gt;
+      &lt;li&gt;General stability improvements&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Plans are currently in the works to run some tests on hardware configurations with a newer iMac to bring the 4th monitor (confidence/stage display) online.  If the tests prove successful, a decision can be made regarding the direction of the media computer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Thu, 08 Feb 2018 13:37:51 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-08-activity-log-audiovisual.html</link>
+            <source>http://localhost:4000/2018-02-08-activity-log-audiovisual.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-08-activity-log-audiovisual.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Activity Log: QU-32 Network Address</title>
+            <description>&lt;ul&gt;
+  &lt;li&gt;In accordance with the rest of the network setup, the QU-32 has been assigned a static IP address.&lt;/li&gt;
+  &lt;li&gt;The gateway value on the Qu-32 was incorrect and has been corrected.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Fri, 02 Feb 2018 14:23:09 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</link>
+            <source>http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-audiovisual-2.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Activity Log: Website Content</title>
+            <description>&lt;ul&gt;
+  &lt;li&gt;Added a network landing page and created a network page sidebar menu.&lt;/li&gt;
+  &lt;li&gt;Started network ip map.&lt;/li&gt;
+  &lt;li&gt;Added network links to topnav and main sidebar menu.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Fri, 02 Feb 2018 13:43:22 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-02-activity-log-general.html</link>
+            <source>http://localhost:4000/2018-02-02-activity-log-general.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-general.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Stage Display: A Conundrum is Afoot</title>
+            <description>&lt;p&gt;Sadly, after extensive troubleshooting with 2 different adapters and various video drivers, adding a 4th display to the iMac was unsuccessful.  The vision is to have a stage display feed coming out of the iMac that can essentially be fed to any location in the building, which would include the rear display in the sanctuary, and potentially, with HDMI splitters, displays on the stage, or another video input that could stream the feed via mobile devices so we have it in front of us just about anywhere we want it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Current Limitations:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;iMac is an older version, 2011, with only a single Thunderbolt port and USB 2.0.&lt;/li&gt;
+  &lt;li&gt;USB to HDMI may not be possible alongside the DualHead2Go in this older environment.  My tests have proven that this is in all likelihood true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Until we solve the problem of the limitations of the iMac that we currently use, we won’t have this in place.  There are a few additional configurations that I can test and will keep you posted on what I find.&lt;/p&gt;
+
+</description>
+            <pubDate>Fri, 02 Feb 2018 13:14:49 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-02-display-configuration-update.html</link>
+            <source>http://localhost:4000/2018-02-02-display-configuration-update.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-02-display-configuration-update.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Activity Log: Sanctuary Display Update</title>
+            <description>&lt;h2 id=&quot;display-configuration&quot;&gt;Display Configuration&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The J5 Create Display Adapter (USB - HDMI was not working with the native driver, nor the updated driver from their website)&lt;/li&gt;
+  &lt;li&gt;Removed the J5 Adapter.&lt;/li&gt;
+  &lt;li&gt;Installed the DisplayLink USB Graphics Software for OSX and macOS version 4.1 on the Media iMac.  This is the driver found at &lt;a href=&quot;http://displaylink.com/downloads/file?id=1085&quot;&gt;www.displaylink.com&lt;/a&gt;.  Coincidentally, it’s the same source that Renewed Vision (ProPresenter) suggested I use when installing their recommended adapter, which we don’t currently own.&lt;/li&gt;
+  &lt;li&gt;By default, during driver installation, the Security &amp;amp; Privacy settings automatically block drivers like this, but when you install these drivers, a popup asks you if you’d like to manage the blocked extension.&lt;/li&gt;
+  &lt;li&gt;While writing the previous point, the iMac flashed a blank white screen with what appeared to be burned-in images and then the Apple Logo and the loading bar appeared as though the system had been re-booted.  House lights automatically dimmed / FOH and Electrics remained on.&lt;/li&gt;
+  &lt;li&gt;11:19 AM, currently waiting for the system to re-boot.&lt;/li&gt;
+  &lt;li&gt;Login screen appeared again with a message: Your computer was restarted because of a problem.  That report has been sent to Apple.&lt;/li&gt;
+  &lt;li&gt;11:22 AM, back to the main desktop.  The Security &amp;amp; Privacy screen sill reports Some System software was blocked from loading.&lt;/li&gt;
+  &lt;li&gt;Checked off DisplayLink Corp to enable driver extension.&lt;/li&gt;
+  &lt;li&gt;Rebooted Computer.&lt;/li&gt;
+  &lt;li&gt;12:24 PM, computer is back online after updating OSX.&lt;/li&gt;
+  &lt;li&gt;12:30 PM, Plugged the J5 video adapter into a USB port and it forced an instant re-boot of the iMac.&lt;/li&gt;
+  &lt;li&gt;Attempted to connect HDMI monitor to J5, no response, no additional displays in Arrangement.&lt;/li&gt;
+  &lt;li&gt;Disconnected J5 Create and threw it across the sanctuary.  (just kidding.)&lt;/li&gt;
+  &lt;li&gt;Conected the Fly Kan Multi-Display Adapter to the iMac.  Good news, it didn’t crash the computer and it shows that it’s receiving power from the USB Bus.&lt;/li&gt;
+  &lt;li&gt;12:39 PM, Connected the HDMI display to the iMac and the iMac screen went completely black.&lt;/li&gt;
+  &lt;li&gt;12:54 PM, after giving the system enough time, nothing changed.  Removed the HDMI monitor.  Screen is still black.  Removed USB Adapter.  Screen is still black.&lt;/li&gt;
+  &lt;li&gt;12:56 PM, Forced a restart.&lt;/li&gt;
+  &lt;li&gt;Restart successful, back to normal.&lt;/li&gt;
+  &lt;li&gt;1:00 PM, reconnected USB to HDMI adapter with HDMI display connected.  Both screens black.  No external display.&lt;/li&gt;
+  &lt;li&gt;Fired up both projectors to see if the absence of the 2nd and 3rd displays are contributing to the problem.&lt;/li&gt;
+  &lt;li&gt;Force shut down iMac.&lt;/li&gt;
+  &lt;li&gt;Connectd USB to HDMI adapter prior to startup.&lt;/li&gt;
+  &lt;li&gt;Started computer, immediate white screen re-boot.&lt;/li&gt;
+  &lt;li&gt;Repeating the same cycle.&lt;/li&gt;
+  &lt;li&gt;1:08 PM, abandoning troubleshooting with current setup.  System is not compatible with the function we are attempting with this software and hardware configuration.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;system-cleanup&quot;&gt;System Cleanup&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cleared out console logs to make room for new error detection.&lt;/li&gt;
+  &lt;li&gt;Updated iMac to High Sierra 10.13.3&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Fri, 02 Feb 2018 12:58:15 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-02-activity-log-audiovisual.html</link>
+            <source>http://localhost:4000/2018-02-02-activity-log-audiovisual.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-02-activity-log-audiovisual.html</guid>
+            
+            <category>media</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Activity Log: Page Added to Site</title>
+            <description>&lt;ul&gt;
+  &lt;li&gt;Added a page under the Sound menu called “&lt;a href=&quot;audio-safety-concerns.html&quot;&gt;Audio Safety&lt;/a&gt;” under “Safety Concerns.”&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Thu, 01 Feb 2018 12:45:41 -0700</pubDate>
+            <link>http://localhost:4000/2018-02-01-activity-log-general.html</link>
+            <source>http://localhost:4000/2018-02-01-activity-log-general.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-02-01-activity-log-general.html</guid>
+            
+            <category>sound</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Remote Control of DMX Lighting System</title>
+            <description>&lt;p&gt;One of the exciting aspects of using Ableton Live in a house of worship is the ability to network two or more computers both running Ableton Live together in a Master/Slave environment, where one computer can:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Take-over clock control of the slave computer and trigger the timeline.&lt;/li&gt;
+  &lt;li&gt;Remotely control MIDI CC values without interrupting the clock on the slave computer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What does this look like?&lt;/p&gt;
+
+&lt;p&gt;With some time and configuration, all of the DMX lighting can be remotely controlled and complete synchronization of the audio, lights, and media elements in a given Sunday morning service can be on point and synchronized with the music to any degree we choose.&lt;/p&gt;
+
+&lt;p&gt;Imagine the band starting the prelude on a Sunday morning and having it run an automation clip that set the stage lights and the house lights to a specific level.&lt;/p&gt;
+
+&lt;p&gt;Consistency.  Experience.  Effortless.&lt;/p&gt;
+
+&lt;p&gt;Pretty cool what we will be able to do.  The canvas we have is much larger than our current supply of paint, so…one step at a time.&lt;/p&gt;
+
+</description>
+            <pubDate>Wed, 31 Jan 2018 00:07:06 -0700</pubDate>
+            <link>http://localhost:4000/2018-01-30-activity-log-audiovisual.html</link>
+            <source>http://localhost:4000/2018-01-30-activity-log-audiovisual.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-01-30-activity-log-audiovisual.html</guid>
+            
+            <category>DMXIS</category>
+            
+            <category>Ableton</category>
+            
+            <category>lights</category>
+            
+            <category>DMX</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Future Plans for Content</title>
+            <description>&lt;p&gt;There are quite literally billions of things that we can do with this site.  Here are a few of my ideas that I’ll be rolling forward with to continue to provide great content that helps you get what you need to do done.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Screenshots and photos:&lt;/strong&gt;  All of this documentation is great, but if there are no photos, illustrations, etc., then it all gets quite boring and we don’t really want boring.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt;  I’m working on another side project that I’ve named “Cue the Sound.”  Or, was it…“Cue the Audio?”  Either way, it will be a YouTube channel that will contain videos of tutorials, screencasts, etc., designed to walk just about anyone through the processes we go through.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Inventory:&lt;/strong&gt;  We really don’t know what we have in “stock” around here.  Assembling an inventory of all of our cabling, equipment, etc., is going to make it easier to manage it if and when it fails.  That may happen sooner than later.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Power Up / Power Down Automation:&lt;/strong&gt;  This one is a bit exciting and might take a while, but the cost is very low (aside from man-hours).  Basically, the vision is to implement an automatic power up / power down sequence for the delicate equipment, etc.  It will all be tied into an automation server.  In addition to power control, the system is extremely versatile and robust and will allows us to integrate nearly every system and piece of hardware we have.  Oh, and it’s the size of a credit card.  Ideas include, but are not limited to:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Automated File backup and management.&lt;/li&gt;
+      &lt;li&gt;Light control based upon mobile device locations and calendars etc.&lt;/li&gt;
+      &lt;li&gt;Centralized remote access to all wireless thermostats and other building control.&lt;/li&gt;
+      &lt;li&gt;Honestly, the list goes on and on.  If you’re interested in knowing more about the platform, head over to &lt;a href=&quot;http://home-assistant.io&quot;&gt;Home-Assistant.io&lt;/a&gt; to explore its possibilities.  The &lt;a href=&quot;https://home-assistant.io/components/&quot;&gt;components that work with HomeAssistant&lt;/a&gt; are numbering above 900.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+            <pubDate>Tue, 30 Jan 2018 23:56:58 -0700</pubDate>
+            <link>http://localhost:4000/2018-01-30-future-plans-for-content-001.html</link>
+            <source>http://localhost:4000/2018-01-30-future-plans-for-content-001.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-01-30-future-plans-for-content-001.html</guid>
+            
+            
+        </item>
+        
+        <item>
+            <title>Documentation Migration Progress</title>
+            <description>&lt;p&gt;Migration of the site from the GitHub WIKI has been a much more time intensive project than originally planned as there’s a fairly steep learning curve regarding the platform that the site is operating on.  But, it’s getting there.&lt;/p&gt;
+
+&lt;p&gt;Today the majority of the changes included re-writing the code in the XML feeds, creating groups in Mailchimp, and developing an automated RSS template for each volunteer team so they could be notified of updates such as this one.&lt;/p&gt;
+
+&lt;p&gt;Menus are coming together but there is still quite a bit of information to push through to the navigation structure.  Onward!&lt;/p&gt;
+
+</description>
+            <pubDate>Tue, 30 Jan 2018 22:53:52 -0700</pubDate>
+            <link>http://localhost:4000/2018-01-30-activity-update-general.html</link>
+            <source>http://localhost:4000/2018-01-30-activity-update-general.html</source>
+            <guid isPermaLink="true">http://localhost:4000/2018-01-30-activity-update-general.html</guid>
+            
+            <category>updates</category>
+            
+            
+        </item>
+        
+    </channel>
+</rss>
